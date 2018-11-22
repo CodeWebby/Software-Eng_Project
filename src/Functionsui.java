@@ -28,6 +28,8 @@ import java.awt.SystemColor;
 
 public class Functionsui extends JPanel {
 
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * Create the panel.
 	 */

@@ -18,6 +18,7 @@ import java.awt.event.ActionEvent;
 
 public class startuservalidation extends JFrame {
 
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField Username_field;
 	private JPasswordField passwordField;
@@ -62,7 +63,7 @@ public class startuservalidation extends JFrame {
 		lblNewLabel_1.setBounds(-84, 77, 571, 329);
 		panel.add(lblNewLabel_1);
 		lblNewLabel_1.setBackground(Color.WHITE);
-		lblNewLabel_1.setIcon(new ImageIcon(startuservalidation.class.getResource("/images/Opera Snapshot_2018-11-12_142622_www.instagram.com.png")));
+	//	lblNewLabel_1.setIcon(new ImageIcon(startuservalidation.class.getResource("./images/Opera Snapshot_2018-11-12_142622_www.instagram.com.png")));
 		
 		Button signinbutton = new Button("Sign In");
 		signinbutton.setBounds(615, 302, 271, 35);

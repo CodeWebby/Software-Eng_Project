@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - startuservalidation",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "startuservalidation",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CellwavejaMain",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "CellwavejaMain",
+            "args": ""
+        }
+    ]
+}

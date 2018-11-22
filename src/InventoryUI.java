@@ -11,6 +11,7 @@ import java.awt.FlowLayout;
 import java.awt.Color;
 
 public class InventoryUI extends JPanel {
+	private static final long serialVersionUID = 1L;
 	private JTable table;
 
 	/**
@@ -44,7 +45,7 @@ public class InventoryUI extends JPanel {
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setBackground(Color.WHITE);
-		lblNewLabel.setIcon(new ImageIcon(InventoryUI.class.getResource("/images/add product.PNG")));
+	//	lblNewLabel.setIcon(new ImageIcon(InventoryUI.class.getResource("/images/add product.PNG")));
 		panel.add(lblNewLabel);
 		
 		

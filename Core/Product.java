@@ -9,17 +9,17 @@ public class Product {
     public Product(){
 
     }
-          public createProduct(){
+ //         public createProduct(){
 
- }
+ //}
           public String viewProduct(){
             return toString();
 }
 
-          public  editProduct(){
+//          public  editProduct(){
 
-}
-          public  deleteProduct(){}
+//}
+//          public  deleteProduct(){}
 
 
     public float getCostPrice() {
