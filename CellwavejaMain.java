@@ -7,23 +7,34 @@ import Core.Manager;
 
 public class CellwavejaMain {
 
-    private ArrayList<Customer> customers;
 
 
 
 
-    public CellwavejaMain(){
+
+
+
+
+
+    public static  void main(String[] args){
+
+      String password;
+      String User;
+      boolean m;
+
+        m =  Manager.Manager1();
+        if (m == true){
+            Scanner reader = new Scanner(System.in);
+            System.out.println("Enter a username: ");
+            User = reader.nextLine();
+
+            System.out.println("Enter a password : \n");
+            password = reader.nextLine();
+            new Manager(User,password);
+        }
+
+
+
 
     }
-
-
-    public static void main(String[] args){
-
-        boolean running = true;
-        while (running==true) {
-            CellwavejaMain m = new CellwavejaMain();
-
-
-            }
-        }
 }
