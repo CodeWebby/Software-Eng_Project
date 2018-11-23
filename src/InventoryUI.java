@@ -1,3 +1,5 @@
+package src;
+
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import java.awt.Font;
