@@ -46,6 +46,13 @@ public class Functionsui extends JPanel {
 		panel_7.setLayout(new BoxLayout(panel_7, BoxLayout.X_AXIS));
 		
 		JButton btnNewButton = new JButton("Calculate Taxes");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				panel_7.removeAll();
+				panel_7.add(new CalculateTaxesUI(),BorderLayout.CENTER);
+				revalidate();
+			}
+		});
 		btnNewButton.setBackground(Color.decode("#B3E4F0"));
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 17));
 		btnNewButton.setMaximumSize(new Dimension(250,60));
@@ -68,6 +75,13 @@ public class Functionsui extends JPanel {
 		panel.add(Box.createRigidArea(new Dimension(0,20)));
 		
 		JButton btnNewButton_3 = new JButton("Calculate Profit/loss");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				panel_7.removeAll();
+				panel_7.add(new profitLostUI(),BorderLayout.CENTER);
+				revalidate();
+			}
+		});
 		btnNewButton_3.setBackground(Color.decode("#B3E4F0"));
 		btnNewButton_3.setFont(new Font("Tahoma", Font.BOLD, 16));
 		btnNewButton_3.setMaximumSize(new Dimension(250,60));
