@@ -14,7 +14,7 @@ public class Manager {
     static String password = null;
 
     private static String Email;
-    private static String telephone;
+    private static String Telephone;
     static List<String> errorList = new ArrayList<String>();
 
     public static boolean Manager1(){
@@ -50,7 +50,7 @@ public class Manager {
         System.out.println("Enter your full name: ");
         Name = reader.nextLine();
         System.out.println(" Enter your phone number (example- (111)111-1111 ");
-        telephone = reader.nextLine();
+        Telephone = reader.nextLine();
 
         boolean b = true;
         if ( confirmhere.isEmpty() || password.isEmpty() || username.isEmpty()) {
