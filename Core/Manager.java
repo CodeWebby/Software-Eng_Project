@@ -10,17 +10,17 @@ public class Manager {
 
     private static String confirmhere = null;
     private static String Name;
-    static String Username = null;
-    static String Password = null;
+    static String username = null;
+    static String password = null;
 
     private static String Email;
-    private static String Telephone;
+    private static String telephone;
     static List<String> errorList = new ArrayList<String>();
 
     public static boolean Manager1(){
         Scanner reader = new Scanner(System.in);
         System.out.println("Enter a username: ");
-        Username = reader.nextLine();
+        username = reader.nextLine();
 
         System.out.println("Enter a password : \n");
         System.out.println(" At least eight characters.\n" +
@@ -28,32 +28,32 @@ public class Manager {
                         " At least one lowercase character.\n"+
                         " At least one number.\n"+
                         " At least one special character\n");
-        Password = reader.nextLine();
+        password = reader.nextLine();
         System.out.println("Confirm password");
         confirmhere = reader.nextLine();
 
-        while (!isValid(Password, errorList)) {
+        while (!isValid(password, errorList)) {
             System.out.println("The password entered here  is invalid");
             for (String error : errorList) {
                 System.out.println(error);
             }
 
             System.out.print("Please enter a given  password : ");
-            Password = reader.nextLine();
+            password = reader.nextLine();
             System.out.println("Confirm password: ");
             confirmhere = reader.nextLine();
 
         }
         //System.out.println("your password is: " + passwordhere);
-         System.out.println("Enter your Email: ");
-         Email = reader.nextLine();
-         System.out.println("Enter your full name: ");
-         Name = reader.nextLine();
-         System.out.println(" Enter your phone number (example- (111)111-1111 ");
-         Telephone = reader.nextLine();
+        System.out.println("Enter your Email: ");
+        Email = reader.nextLine();
+        System.out.println("Enter your full name: ");
+        Name = reader.nextLine();
+        System.out.println(" Enter your phone number (example- (111)111-1111 ");
+        telephone = reader.nextLine();
 
         boolean b = true;
-        if ( confirmhere.isEmpty() || Password.isEmpty() || Username.isEmpty()) {
+        if ( confirmhere.isEmpty() || password.isEmpty() || username.isEmpty()) {
             b = false;
         }
         return b;
@@ -61,7 +61,7 @@ public class Manager {
 
     }
 
-    public Manager(String username, String password    ){
+    public Manager(String username, String password){
         Scanner reader = new Scanner(System.in);
         if ( validUsername(username) == true){
             if(validPassword(password) == true){
@@ -126,7 +126,7 @@ public class Manager {
     public static boolean isValid(String passwordhere, List<String> errorList) {
 
         Pattern specailCharPatten = Pattern.compile("[^a-z0-9 ]", Pattern.CASE_INSENSITIVE);
-        Pattern UpperCasePatten = Pattern.compile("[A-Z ]");
+        Pattern upperCasePatten = Pattern.compile("[A-Z ]");
         Pattern lowerCasePatten = Pattern.compile("[a-z ]");
         Pattern digitCasePatten = Pattern.compile("[0-9 ]");
         errorList.clear();
@@ -145,7 +145,7 @@ public class Manager {
             errorList.add("Password must have atleast one specail character !!");
             flag=false;
         }
-        if (!UpperCasePatten.matcher(passwordhere).find()) {
+        if (!upperCasePatten.matcher(passwordhere).find()) {
             errorList.add("Password must have atleast one uppercase character !!");
             flag=false;
         }
@@ -161,6 +161,5 @@ public class Manager {
         return flag;
 
     }
-
 
 }
