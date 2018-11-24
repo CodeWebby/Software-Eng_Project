@@ -6,21 +6,18 @@ public class Product {
     protected int quantity;
     protected String Serial;
 
-    public Product(){
-
+    public Product(String colour, String description, String brandName, String productType,
+                    float costPrice, float sellingPrice){
+        this.colour = colour;
+        this.description = description;
+        this.brandName = brandName;
+        this.productType = productType;
+        this.costPrice = costPrice;
+        this.sellingPrice = sellingPrice;
     }
-          public void createProduct(){
-
-}
-          public String viewProduct(){
-            return toString();
-}
-
-          public  void editProduct(){
-
-}
-          public  void deleteProduct(){}
-
+    public String viewProduct(){
+        return toString();
+    }
 
     public float getCostPrice() {
         return costPrice;
