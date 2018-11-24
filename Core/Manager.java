@@ -9,12 +9,12 @@ import java.util.regex.Pattern;
 public class Manager {
 
     private static String confirmhere = null;
-    private String Name;
+    private static String Name;
     static String Username = null;
     static String Password = null;
 
-    private String Email;
-    private String Telephone;
+    private static String Email;
+    private static String Telephone;
     static List<String> errorList = new ArrayList<String>();
 
     public static boolean Manager1(){
@@ -40,11 +40,17 @@ public class Manager {
 
             System.out.print("Please enter a given  password : ");
             Password = reader.nextLine();
-            System.out.println("Confirm password");
+            System.out.println("Confirm password: ");
             confirmhere = reader.nextLine();
 
         }
         //System.out.println("your password is: " + passwordhere);
+         System.out.println("Enter your Email: ");
+         Email = reader.nextLine();
+         System.out.println("Enter your full name: ");
+         Name = reader.nextLine();
+         System.out.println(" Enter your phone number (example- (111)111-1111 ");
+         Telephone = reader.nextLine();
 
         boolean b = true;
         if ( confirmhere.isEmpty() || Password.isEmpty() || Username.isEmpty()) {
@@ -56,12 +62,19 @@ public class Manager {
     }
 
     public Manager(String username, String password    ){
+        Scanner reader = new Scanner(System.in);
         if ( validUsername(username) == true){
             if(validPassword(password) == true){
+                System.out.println("Enter the last 4 digits of your phone number : ");
+                String last = reader.nextLine();
+                  String num = getTelephone().substring(getTelephone().length() - 4);
+
+                  if(last.equals(num) ){
                System.out.println(" show options for the client to choose");
                return;
 
-            }else{
+              }
+             }else{
                 System.out.println("Invalid password");
                 return;
             }
@@ -89,9 +102,26 @@ public class Manager {
         return this.Password;
     }
 
+    public String getEmail() {
+        return this.Email;
+    }
 
+    public String getTelephone() {
+        return this.Telephone;
+    }
 
+    public String getName() {
+        return this.Name;
+    }
 
+    @Override
+    public String toString() {
+        return " Contact Information  \n"+
+                "Name:     "+ getName() + "\n"+
+                "Telephone:  "+ getTelephone() + "\n"+
+                "Email:    "+ getEmail() + " \n"+
+                "------------------------------";
+    }
 
     public static boolean isValid(String passwordhere, List<String> errorList) {
 
