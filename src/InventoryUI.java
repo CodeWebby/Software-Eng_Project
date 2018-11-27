@@ -8,12 +8,10 @@ import javax.swing.JTable;
 import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import java.awt.FlowLayout;
 import java.awt.Color;
 
-public class InventoryUI extends JPanel {
-	private JTable table;
+class InventoryUI extends JPanel {
 
 	/**
 	 * Create the panel.
@@ -23,8 +21,8 @@ public class InventoryUI extends JPanel {
 		
 		JScrollPane scrollPane = new JScrollPane();
 		add(scrollPane, BorderLayout.CENTER);
-		
-		table = new JTable();
+
+		JTable table = new JTable();
 		
 		DefaultTableModel tmodel=new DefaultTableModel(
 			new Object[][] {

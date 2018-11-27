@@ -13,30 +13,23 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JPasswordField;
 import javax.swing.ImageIcon;
-import javax.swing.SwingConstants;
 import java.awt.Panel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class startuservalidation extends JFrame {
+class startuservalidation extends JFrame {
 
-	private JPanel contentPane;
-	private JTextField Username_field;
-	private JPasswordField passwordField;
-	
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					startuservalidation frame = new startuservalidation();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
+		EventQueue.invokeLater(() -> {
+			try {
+				startuservalidation frame = new startuservalidation();
+				frame.setVisible(true);
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
 		});
 	}
@@ -44,11 +37,11 @@ public class startuservalidation extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public startuservalidation() {
+	private startuservalidation() {
 		setBackground(Color.WHITE);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 960,540);
-		contentPane = new JPanel();
+		JPanel contentPane = new JPanel();
 		contentPane.setBackground(Color.decode("#FAFAFA"));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -69,12 +62,10 @@ public class startuservalidation extends JFrame {
 		Button signinbutton = new Button("Sign In");
 		signinbutton.setBounds(615, 302, 271, 35);
 		contentPane.add(signinbutton);
-		signinbutton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				Functionsui f=new Functionsui();
-				setContentPane(f);
-				revalidate();
-			}
+		signinbutton.addActionListener(arg0 -> {
+			Functionsui f=new Functionsui();
+			setContentPane(f);
+			revalidate();
 		});
 		signinbutton.setFont(new Font("Dialog", Font.BOLD, 16));
 		signinbutton.setForeground(Color.WHITE);
@@ -97,15 +88,15 @@ public class startuservalidation extends JFrame {
 		JSeparator password_separator_1 = new JSeparator();
 		password_separator_1.setBounds(613, 265, 271, 2);
 		contentPane.add(password_separator_1);
-		
-		passwordField = new JPasswordField();
+
+		JPasswordField passwordField = new JPasswordField();
 		passwordField.setBounds(615, 232, 271, 35);
 		contentPane.add(passwordField);
-		
-		Username_field = new JTextField();
-		Username_field.setBounds(615, 131, 271, 35);
-		contentPane.add(Username_field);
-		Username_field.setColumns(10);
+
+		JTextField username_field = new JTextField();
+		username_field.setBounds(615, 131, 271, 35);
+		contentPane.add(username_field);
+		username_field.setColumns(10);
 		
 		Panel panel_1 = new Panel();
 		panel_1.setBounds(486, 0, 456, 77);

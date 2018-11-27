@@ -1,14 +1,18 @@
 package Core;
 import java.util.ArrayList;
-public class Customer {
-    private String customerid, telephone, name;
-    private ArrayList<Address> addresses;
-    private ArrayList<Transaction> transactions;
+import java.util.Objects;
+
+class Customer {
+    private final String customerid;
+    private final String telephone;
+    private final String name;
+    private final ArrayList<Address> addresses;
+    private final ArrayList<Transaction> transactions;
 
     public Customer(String clid, String name_, String address_, String parish_,
                   String tel_){
         transactions = getTransactions();
-        addresses = new ArrayList<Address>();
+        addresses = new ArrayList<>();
         // Parish pa = Parish.KingstonStAndrew;  // default parish
         Parish pa = Parish.findByName(parish_);
 
@@ -19,12 +23,12 @@ public class Customer {
     }
     public String toString() {
         String f = "Client: %s (%s)\n  Tel: %s%s%s";
-        String aa;
-        aa = "\n  Address:";
+        StringBuilder aa;
+        aa = new StringBuilder("\n  Address:");
         for (Address b : addresses) {
-            aa += String.format("\n    %s", b.toString());
+            aa.append(String.format("\n    %s", b.toString()));
         }
-        return String.format(f, name, customerid, telephone,  aa);
+        return String.format(f, name, customerid, telephone, aa.toString());
     }
 
     public Parish getPrimaryParish(){
@@ -35,10 +39,10 @@ public class Customer {
         catch(Exception e){
             p = null;
         }
-        return p.getParish();
+        return Objects.requireNonNull(p).getParish();
     }
 
-    public ArrayList<Transaction> getTransactions() {
+    private ArrayList<Transaction> getTransactions() {
         return transactions;
     }
 

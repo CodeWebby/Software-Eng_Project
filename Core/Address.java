@@ -1,10 +1,10 @@
 package Core;
 
-public class Address {
-    private String address;
-    private Parish parish;
+class Address {
+    private final String address;
+    private final Parish parish;
 
-    public Address(String street, Parish p){
+    Address(String street, Parish p){
         this.address = street;
         this.parish = p;
     }
@@ -14,14 +14,14 @@ public class Address {
         this.parish = Parish.findByName(p);
     }
 
-    public String getAddress(){
+    private String getAddress(){
         return String.format("%s, %s", this.address, this.parish.fullName());
     }
     public String getAddressOnly(){
         return this.address;
     }
 
-    public Parish getParish(){
+    Parish getParish(){
         return this.parish;
     }
 

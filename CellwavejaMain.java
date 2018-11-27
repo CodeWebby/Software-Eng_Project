@@ -2,10 +2,9 @@
 
 import java.util.*;
 
-import Core.Customer;
 import Core.Manager;
 
-public class CellwavejaMain {
+class CellwavejaMain {
 
 
 
@@ -16,14 +15,14 @@ public class CellwavejaMain {
 
 
 
-    public static  void main(String[] args){
+    public static void main(String[] args){
 
       String password;
       String User;
       boolean m;
 
         m =  Manager.Manager1();
-        if (m == true){
+        if (m){
             Scanner reader = new Scanner(System.in);
             System.out.println("Enter a username: ");
             User = reader.nextLine();

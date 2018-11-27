@@ -7,30 +7,15 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 
-import javax.swing.JTextField;
-import javax.swing.JTabbedPane;
-import javax.swing.JMenuBar;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-import javax.swing.JList;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.JLabel;
-import javax.swing.JScrollBar;
-import javax.swing.border.*;
 import java.awt.Font;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-import javax.swing.JTextPane;
-import javax.swing.SwingConstants;
 import javax.swing.JButton;
-import java.awt.Component;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.UIManager;
 import java.awt.SystemColor;
 
-public class Functionsui extends JPanel {
+class Functionsui extends JPanel {
 
 	/**
 	 * Create the panel.
@@ -53,12 +38,10 @@ public class Functionsui extends JPanel {
 		
 		JButton btnNewButton_1 = new JButton(" Inventory");
 		btnNewButton_1.setBackground(SystemColor.inactiveCaptionBorder);
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				add(new InventoryUI(),BorderLayout.CENTER);
-				revalidate();
-				
-			}
+		btnNewButton_1.addActionListener(arg0 -> {
+			add(new InventoryUI(),BorderLayout.CENTER);
+			revalidate();
+
 		});
 		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		btnNewButton_1.setMaximumSize(new Dimension(250,60));
