@@ -4,20 +4,31 @@ public class Product {
     private String colour,description,brandName,productType;
     protected float costPrice,sellingPrice;
     protected int quantity;
-    protected String Serial;
+    protected String serial;
 
     public Product(String colour, String description, String brandName, String productType,
-                    float costPrice, float sellingPrice){
+                    float costPrice, float sellingPrice, int quantity, String serial){
         this.colour = colour;
         this.description = description;
         this.brandName = brandName;
         this.productType = productType;
         this.costPrice = costPrice;
         this.sellingPrice = sellingPrice;
+        this.quantity = quantity;
+        this.serial = serial;
+
     }
+
     public String viewProduct(){
         return toString();
     }
+
+    public void editProduct(String data){
+    
+    }
+    
+    public void deleteProduct(){}
+
 
     public float getCostPrice() {
         return costPrice;
@@ -40,7 +51,7 @@ public class Product {
     }
 
     public String getSerial() {
-        return Serial;
+        return serial;
     }
 
     public String getProductType() {

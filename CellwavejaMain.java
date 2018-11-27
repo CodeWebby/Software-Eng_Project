@@ -2,8 +2,9 @@
 
 import java.util.*;
 
-import Core.Customer;
-import Core.Manager;
+import Core.*;
+//import Core.Customer;
+//import Core.Manager;
 
 public class CellwavejaMain {
 
@@ -28,9 +29,10 @@ public class CellwavejaMain {
             System.out.println("Enter a username: ");
             User = reader.nextLine();
 
-            System.out.println("Enter a password : \n");
+            System.out.println("Enter a password: \n");
             password = reader.nextLine();
             new Manager(User,password);
+            reader.close();
         }
 
 
