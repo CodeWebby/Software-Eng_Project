@@ -30,6 +30,8 @@ class Product {
 		Product.colour = colour;
 
 
+
+
 	}
 	public static void createProduct(){
 
@@ -53,6 +55,7 @@ class Product {
 
 		Product e = new Product(modelNumber, productName, productType, description, costPrice, sellingPrice, quantity, imageName, colour);
 		products.add(e);
+
 
 	}
 	public static void viewProduct(){
@@ -126,6 +129,9 @@ class Product {
 
 
 	public static void  deleteProduct() {
+		for (Product a : products) {
+			System.out.println(a);
+		}
 		System.out.println("Enter the model number of the product you want to remove.");
 		Scanner read = new Scanner(System.in);
 		String delete = read.nextLine();

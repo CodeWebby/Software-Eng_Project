@@ -109,7 +109,7 @@ public class Manager {
 
 
                               case "C":
-                                  System.out.println("customer class");
+                                  Customer.menu();
 
                                   break;
                               case "T":

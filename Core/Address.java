@@ -2,27 +2,27 @@ package Core;
 
 class Address {
     private final String address;
-    private final Parish parish;
+    private static Parish parish = null;
 
     Address(String street, Parish p){
         this.address = street;
-        this.parish = p;
+        parish = p;
     }
 
     public Address(String street, String p){
         this.address = street;
-        this.parish = Parish.findByName(p);
+        parish = Parish.findByName(p);
     }
 
     private String getAddress(){
-        return String.format("%s, %s", this.address, this.parish.fullName());
+        return String.format("%s, %s", this.address, parish.fullName());
     }
     public String getAddressOnly(){
         return this.address;
     }
 
-    Parish getParish(){
-        return this.parish;
+    static Parish getParish(){
+        return parish;
     }
 
     public String toString(){
