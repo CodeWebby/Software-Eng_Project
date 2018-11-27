@@ -9,9 +9,9 @@ class Product {
 	private static String description;
 	private static String productName;
 	private static String productType;
-	private static Float costPrice;
-	private static Float sellingPrice;
-	private static int quantity;
+	protected static Float costPrice;
+	protected static Float sellingPrice;
+	protected static int quantity;
 	private static String modelNumber;
 	private static String imageName;
 	private static final ArrayList <Product> products = new ArrayList<>();
@@ -104,7 +104,7 @@ class Product {
 						a.setDescription(getDescription());
 						break;
 					case "C":
-						a.setCostPrice(a.getCostPrice());
+						a.setCostPrice(getCostPrice());
 						break;
 					case "s":
 						a.setSellingPrice(getSellingPrice());
@@ -148,15 +148,15 @@ class Product {
 	}
 
 
-	private float getCostPrice() {
+	protected static float getCostPrice() {
 		return costPrice;
 	}
 
-	private static float getSellingPrice() {
+	protected static float getSellingPrice() {
 		return sellingPrice;
 	}
 
-	private static int getQuantity() {
+	public static int getQuantity() {
 		return quantity;
 	}
 
