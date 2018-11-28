@@ -1,28 +1,28 @@
 package Core;
 
-public class Address {
-    private String address;
-    private Parish parish;
+class Address {
+    private final String address;
+    private static Parish parish = null;
 
-    public Address(String street, Parish p){
+    Address(String street, Parish p){
         this.address = street;
-        this.parish = p;
+        parish = p;
     }
 
     public Address(String street, String p){
         this.address = street;
-        this.parish = Parish.findByName(p);
+        parish = Parish.findByName(p);
     }
 
-    public String getAddress(){
-        return String.format("%s, %s", this.address, this.parish.fullName());
+    private String getAddress(){
+        return String.format("%s, %s", this.address, parish.fullName());
     }
     public String getAddressOnly(){
         return this.address;
     }
 
-    public Parish getParish(){
-        return this.parish;
+    static Parish getParish(){
+        return parish;
     }
 
     public String toString(){

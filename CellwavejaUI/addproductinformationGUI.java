@@ -1,5 +1,7 @@
 package CellwavejaUI;
+import Core.Product;
 
+import java.util.*;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -41,6 +43,19 @@ public class addproductinformationGUI extends JPanel {
 	private JTextField textField_4Colour;
 	private JTextField textField_5CostPrice;
 	private JTextField textField_6SellingPrice;
+
+	private static String colour;
+	private static String description;
+	private static String productName;
+	private static String productType;
+	private static Float costPrice;
+	private static Float sellingPrice;
+	private static int quantity;
+	private static String modelNumber;
+	private static String imageName;
+
+	public static ArrayList <Product> newProducts = new ArrayList<Product>();
+
 	private String productImageName;
 	private RenderedImage rImage;
 	private File saveFile;
@@ -116,6 +131,7 @@ public class addproductinformationGUI extends JPanel {
 		textField_1ProductName.setColumns(10);
 		textField_1ProductName.setBounds(190, 119, 366, 22);
 		panel.add(textField_1ProductName);
+		productName = textField_1ProductName.getText();
 		
 		textField_2ProductType = new JTextField();
 		textField_2ProductType.setColumns(10);
@@ -144,8 +160,12 @@ public class addproductinformationGUI extends JPanel {
 		textField_6SellingPrice.setColumns(10);
 		textField_6SellingPrice.setBounds(190, 284, 366, 22);
 		panel.add(textField_6SellingPrice);
+
+		JTextArea textAreaDescription = new JTextArea();
+		textAreaDescription.setBounds(183, 323, 373, 111);
+		panel.add(textAreaDescription);
 		
-		JButton btnNewButton = new JButton("Save Product",new ImageIcon(addproductinformationGUI.class.getResource("/images/saveicon.PNG")));
+		JButton btnNewButton = new JButton();//"Save Product",new ImageIcon(addproductinformationGUI.class.getResource("/images/saveicon.PNG")));
 		btnNewButton.setBackground(Color.decode("#BEE5F9"));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -182,15 +202,38 @@ public class addproductinformationGUI extends JPanel {
 					JOptionPane.showMessageDialog(null, "INPUT DATA IN ALL FIELDS", "Input Error", JOptionPane.INFORMATION_MESSAGE);
 				}	
 				if (success==true) {
-					try {
+					modelNumber = textFieldModelNumber.getText();
+					productName = textField_1ProductName.getText();
+					productType = textField_2ProductType.getText();
+					colour = textField_4Colour.getText();
+					costPrice = Float.valueOf(textField_5CostPrice.getText());
+					sellingPrice = Float.valueOf(textField_6SellingPrice.getText());
+					quantity = Integer.parseInt(textField_3Quantity.getText());
+					description = textAreaDescription.getText();
+
+					Product newProduct = new Product(modelNumber, productName, productType, description, costPrice, sellingPrice, quantity, "image", colour);
+					
+					/*try {
 						ImageIO.write(rImage,"png", saveFile);
 					} catch (IOException ioe) {
 						// Auto-generated catch block
 						ioe.printStackTrace();
-					}
+					}*/
 					removeAll();
+					newProducts.add(-1,newProduct);
+					for(Product p : newProducts){
+						p.printProduct();
+					}
+
+					/*for (int i=0;i<newProducts.size();i++){
+						newProducts.get(i).printProduct();
+					}*/
 					add(new InventoryUI(),BorderLayout.CENTER);
 					revalidate();
+					
+					
+					
+
 				}	
 				
 			}
@@ -199,7 +242,7 @@ public class addproductinformationGUI extends JPanel {
 		btnNewButton.setBounds(361, 463, 205, 101);
 		panel.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("Cancel\r\n",new ImageIcon(addproductinformationGUI.class.getResource("/images/cancelicon.PNG")));
+		JButton btnNewButton_1 = new JButton("Cancel\r\n");//,new ImageIcon(addproductinformationGUI.class.getResource("/images/cancelicon.PNG")));
 		btnNewButton_1.setBackground(Color.decode("#BEE5F9"));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -212,11 +255,7 @@ public class addproductinformationGUI extends JPanel {
 		btnNewButton_1.setBounds(75, 463, 185, 100);
 		panel.add(btnNewButton_1);
 		
-		JTextArea textAreaDescription = new JTextArea();
-		textAreaDescription.setBounds(183, 323, 373, 111);
-		panel.add(textAreaDescription);
-		
-		JButton btnAddImage = new JButton("Add product Image",new ImageIcon(addproductinformationGUI.class.getResource("/images/add product.PNG")));
+		JButton btnAddImage = new JButton("Add product Image");//,new ImageIcon(addproductinformationGUI.class.getResource("/images/add product.PNG")));
 		btnAddImage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				JFileChooser productImageLoc=new JFileChooser();
@@ -258,12 +297,10 @@ public class addproductinformationGUI extends JPanel {
 		
 		
 		
-		
-		
-		
-		
-		
-		
-
 	}
+
+	public ArrayList<Product> getNewProducts(){
+		return newProducts;
+	}
+	
 }

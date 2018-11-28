@@ -2,7 +2,7 @@ package Core;
 
 import java.util.Date;
 
-public class Transaction {
+class Transaction {
 
     private Date Time;
     private Date Date;

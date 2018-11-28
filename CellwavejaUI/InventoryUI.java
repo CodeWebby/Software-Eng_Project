@@ -1,4 +1,6 @@
 package CellwavejaUI;
+import Core.*;
+import java.util.*;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
@@ -21,6 +23,7 @@ import java.awt.event.ActionEvent;
 public class InventoryUI extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private JTable table;
+	//public ArrayList <Product> newProducts = new ArrayList<Product>();
 
 	/**
 	 * Create the panel.
@@ -33,13 +36,30 @@ public class InventoryUI extends JPanel {
 		
 		table = new JTable();
 		
-		DefaultTableModel tmodel=new DefaultTableModel(
-			new Object[][] {
+		DefaultTableModel tmodel=new DefaultTableModel();
+			/*new Object[][] {
 			},
 			new String[] {
 				"Model#","Product Name","Product Type","Quantity","Colour","Cost Price","Selling Price", "Description"
 			}
-		);
+		);*/
+		tmodel.addColumn("Model#");
+		tmodel.addColumn("Product Name");
+		tmodel.addColumn("Product Type");
+		tmodel.addColumn("Quantity");
+		tmodel.addColumn("Colour");
+		tmodel.addColumn("Cost Price");
+		tmodel.addColumn("Selling Price");
+		tmodel.addColumn("Description");
+
+
+		for (int i=0; i<addproductinformationGUI.newProducts.size(); i++){
+			tmodel.addRow(addproductinformationGUI.newProducts.get(i).print());
+		}
+
+		/*for (Product p : addproductinformationGUI.getNewProducts()){
+			tmodel.addRow(Product p.print());
+		}*/
 		table.setModel(tmodel);
 		scrollPane.setViewportView(table);
 		
@@ -63,7 +83,7 @@ public class InventoryUI extends JPanel {
 		btnNewButton.setPreferredSize(new Dimension (30,30));
 		panel.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("",new ImageIcon(InventoryUI.class.getResource("/images/trashcanicon.PNG")));
+		JButton btnNewButton_1 = new JButton("");//("",new ImageIcon(InventoryUI.class.getResource("/images/trashcanicon.PNG")));
 		btnNewButton_1.setToolTipText("Remove Product from inventory");
 		btnNewButton_1.setPreferredSize(new Dimension(30,30));
 		panel.add(btnNewButton_1);

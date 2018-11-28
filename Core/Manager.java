@@ -1,7 +1,6 @@
 package Core;
 
-import CellwavejaUI.*;
-import java.util.*;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -10,25 +9,25 @@ import java.util.regex.Pattern;
 public class Manager {
 
     private static String confirmhere = null;
-    private static String Name;
-    static String Username = null;
-    static String Password = null;
+    private  static String Name;
+    private static String Username = null;
+    private static String Password = null;
 
     private static String Email;
     private static String Telephone;
-    static List<String> errorList = new ArrayList<String>();
+     private static final List<String> errorList = new ArrayList<>();
 
     public static boolean Manager1(){
         Scanner reader = new Scanner(System.in);
         System.out.println("Enter a username: ");
         Username = reader.nextLine();
 
-        System.out.println("Enter a password: \n");
-        System.out.println("At least eight characters.\n" +
-                        "At least one uppercase character.\n" +
-                        "At least one lowercase character.\n"+
-                        "At least one number.\n"+
-                        "At least one special character\n");
+        System.out.println("Enter a password : \n");
+        System.out.println(" At least eight characters.\n" +
+                        " At least one uppercase character.\n " +
+                        " At least one lowercase character.\n"+
+                        " At least one number.\n"+
+                        " At least one special character\n");
         Password = reader.nextLine();
         System.out.println("Confirm password");
         confirmhere = reader.nextLine();
@@ -46,13 +45,12 @@ public class Manager {
 
         }
         //System.out.println("your password is: " + passwordhere);
-         System.out.println("\nEnter your Email: ");
+         System.out.println("Enter your Email: ");
          Email = reader.nextLine();
          System.out.println("Enter your full name: ");
          Name = reader.nextLine();
-         System.out.println("Enter your phone number (example- (111)111-1111 ");
+         System.out.println(" Enter your phone number (example- (111)111-1111 ");
          Telephone = reader.nextLine();
-         
 
         boolean b = true;
         if ( confirmhere.isEmpty() || Password.isEmpty() || Username.isEmpty()) {
@@ -65,58 +63,100 @@ public class Manager {
 
     public Manager(String username, String password    ){
         Scanner reader = new Scanner(System.in);
-        if ( validUsername(username) == true){
-            if(validPassword(password) == true){
+        if (validUsername(username)){
+            if(validPassword(password)){
                 System.out.println("Enter the last 4 digits of your phone number : ");
                 String last = reader.nextLine();
-                String num = getTelephone().substring(getTelephone().length() - 4);
+                  String num = getTelephone().substring(getTelephone().length() - 4);
 
-                if(last.equals(num) ){
-                System.out.println(" show options for the client to choose");
+                  if(last.equals(num) ){
+                      System.out.println(" show options for the client to choose");
+                      System.out.println("Command Options: ");
+                      System.out.println("P: Product");
+                      System.out.println("C: Customer");
+                      System.out.println("T: Transaction");
+                      System.out.println("q: Quit");
+                      Scanner scan = new Scanner(System.in);
+                      String choice = scan.nextLine();
+                      do {
+                          switch (choice) {
+                              case "P":
 
-                startuservalidation frame = new startuservalidation();
-			    frame.setVisible(true);
-                
+                                  System.out.println("Command Options: ");
+                                  System.out.println("C: Create Product");
+                                  System.out.println("V: View Product");
+                                  System.out.println("E: Edit Product");
+                                  System.out.println("D: Delete Product");
+                                  System.out.println("q: Quit");
+                                  String ch = scan.nextLine();
+                                  do {
+                                      switch (ch){
+                                          case "C":
+                                              //Product.createProduct();
+                                              break;
+                                          case "V":
+                                              Product.viewProduct();
+                                              break;
+                                          case "E":
+                                            //  Product.editProduct();
+                                              break;
+                                          case "D":
+                                              //Product.deleteProduct();
+                                              break;
+                                      }
+                                  } while (!ch.equals("q"));
+                                  break;
 
-                }
-            }else{
+
+                              case "C":
+                                  Customer.menu();
+
+                                  break;
+                              case "T":
+                                  System.out.println("Transaction class");
+                                  break;
+
+
+                          }
+                      } while (!choice.equals("q"));
+
+                  }
+             }else{
                 System.out.println("Invalid password");
-                return;
             }
         }else{
             System.out.println("Invalid username ");
-            return ;
         }
 
     }
 
 
 
-    public boolean validPassword(String passwor){
+    private boolean validPassword(String passwor){
         return passwor.equals(getPassword());
     }
 
-    public boolean validUsername(String username){
+    private boolean validUsername(String username){
         return username.equals( getUsername());
     }
-    public String getUsername() {
-        return this.Username;
+    private String getUsername() {
+        return Username;
     }
 
-    public String getPassword() {
-        return this.Password;
+    private String getPassword() {
+        return Password;
     }
 
-    public String getEmail() {
-        return this.Email;
+    private String getEmail() {
+        return Email;
     }
 
-    public String getTelephone() {
-        return this.Telephone;
+    private String getTelephone() {
+        return Telephone;
     }
 
-    public String getName() {
-        return this.Name;
+    private String getName() {
+        return Name;
     }
 
     @Override
@@ -128,7 +168,7 @@ public class Manager {
                 "------------------------------";
     }
 
-    public static boolean isValid(String passwordhere, List<String> errorList) {
+    private static boolean isValid(String passwordhere, List<String> errorList) {
 
         Pattern specailCharPatten = Pattern.compile("[^a-z0-9 ]", Pattern.CASE_INSENSITIVE);
         Pattern UpperCasePatten = Pattern.compile("[A-Z ]");
