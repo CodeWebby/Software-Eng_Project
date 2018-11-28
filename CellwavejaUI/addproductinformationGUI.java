@@ -44,15 +44,15 @@ public class addproductinformationGUI extends JPanel {
 	private JTextField textField_5CostPrice;
 	private JTextField textField_6SellingPrice;
 
-	private static String colour;
-	private static String description;
-	private static String productName;
-	private static String productType;
-	private static Float costPrice;
-	private static Float sellingPrice;
-	private static int quantity;
-	private static String modelNumber;
-	private static String imageName;
+	private String colour;
+	private String description;
+	private String productName;
+	private String productType;
+	private Float costPrice;
+	private Float sellingPrice;
+	private int quantity;
+	private String modelNumber;
+	private String imageName = "image";
 
 	public static ArrayList <Product> newProducts = new ArrayList<Product>();
 
@@ -211,8 +211,6 @@ public class addproductinformationGUI extends JPanel {
 					quantity = Integer.parseInt(textField_3Quantity.getText());
 					description = textAreaDescription.getText();
 
-					Product newProduct = new Product(modelNumber, productName, productType, description, costPrice, sellingPrice, quantity, "image", colour);
-					
 					/*try {
 						ImageIO.write(rImage,"png", saveFile);
 					} catch (IOException ioe) {
@@ -220,20 +218,11 @@ public class addproductinformationGUI extends JPanel {
 						ioe.printStackTrace();
 					}*/
 					removeAll();
-					newProducts.add(-1,newProduct);
-					for(Product p : newProducts){
-						p.printProduct();
-					}
+					newProducts.add(Product.createProduct(modelNumber, productName, productType, description, costPrice, sellingPrice, quantity, imageName, colour));
 
-					/*for (int i=0;i<newProducts.size();i++){
-						newProducts.get(i).printProduct();
-					}*/
 					add(new InventoryUI(),BorderLayout.CENTER);
 					revalidate();
 					
-					
-					
-
 				}	
 				
 			}

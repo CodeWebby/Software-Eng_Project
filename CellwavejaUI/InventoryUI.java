@@ -22,7 +22,7 @@ import java.awt.event.ActionEvent;
 
 public class InventoryUI extends JPanel {
 	private static final long serialVersionUID = 1L;
-	private JTable table;
+	public JTable table;
 	//public ArrayList <Product> newProducts = new ArrayList<Product>();
 
 	/**

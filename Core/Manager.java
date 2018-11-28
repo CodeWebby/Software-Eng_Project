@@ -95,7 +95,7 @@ public class Manager {
                                               //Product.createProduct();
                                               break;
                                           case "V":
-                                              Product.viewProduct();
+                                              //viewProduct();
                                               break;
                                           case "E":
                                             //  Product.editProduct();

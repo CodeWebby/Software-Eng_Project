@@ -5,66 +5,42 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class Product {
-	private static String colour;
-	private static String description;
-	private static String productName;
-	private static String productType;
-	private static Float costPrice;
-	private static Float sellingPrice;
-	private static int quantity;
-	private static String modelNumber;
-	private static String imageName;
-	//private static final ArrayList <Product> newProducts = new ArrayList<Product>();
+	private String colour;
+	private String description;
+	private String productName;
+	private String productType;
+	private Float costPrice;
+	private Float sellingPrice;
+	private int quantity;
+	private String modelNumber;
+	private String imageName;
 
 
-	public Product(String modelNumber, String productName, String productType, String description,
-					 Float costPrice, Float sellingPrice, int quantity, String imageName, String colour) {
+	private Product(){}	
 
-		Product.modelNumber = modelNumber;
-		Product.productName = productName;
-		Product.productType = productType;
-		Product.description = description;
-		Product.costPrice = costPrice;
-		Product.sellingPrice = sellingPrice;
-		Product.quantity = quantity;
-		Product.imageName = imageName;
-		Product.colour = colour;
+	private Product(String modelNumber, String productName, String productType, String description,
+					Float costPrice, Float sellingPrice, int quantity, String imageName, String colour) {
 
-
-
+		this.modelNumber = modelNumber;
+		this.productName = productName;
+		this.productType = productType;
+		this.description = description;
+		this.costPrice = costPrice;
+		this.sellingPrice = sellingPrice;
+		this.quantity = quantity;
+		this.imageName = imageName;
+		this.colour = colour;
 
 	}
-	public static void createProduct(String modelNumber, String productName, String productType, String description,
+
+	public static Product createProduct(String modelNumber, String productName, String productType, String description,
 										Float costPrice, Float sellingPrice, int quantity, String imageName, String colour){
 
-		/*Scanner read = new Scanner(System.in);
-		System.out.println("Enter the model number of the product.");
-		modelNumber = read.nextLine() ;
-		System.out.println("Enter the name of the product.");
-		productName = read.nextLine() ;
-		System.out.println("Enter the type of the product.");
-		productType = read.nextLine() ;
-		System.out.println("Enter the description of the product.");
-		description = read.nextLine() ;
-		System.out.println("Enter the cost price of the product.");
-		costPrice = read.nextFloat() ;
-		System.out.println("Enter the selling price of the product.");
-		sellingPrice = read.nextFloat() ;
-		System.out.println("Enter the quantity of the product.");
-		quantity = read.nextInt() ;
-		System.out.println("Enter the colour  of the product.");
-		colour = read.nextLine() ;*/
-
-		//Product e = new Product(modelNumber, productName, productType, description, costPrice, sellingPrice, quantity, imageName, colour);
-		//newProducts.add(e);
-		//for (int i=0; i<newProducts.size();i++){
-		//	newProducts.get(i).printProduct();
-		//}
-
-
+		Product newProduct = new Product(modelNumber, productName, productType, description, costPrice, sellingPrice, quantity, imageName, colour);
+		return newProduct;								
 	}
 
-	public static void viewProduct(){
+	public void viewProduct(){
 		print();
 	}
 
@@ -154,19 +130,19 @@ public class Product {
 	}*/
 
 
-	private static Float getCostPrice() {
+	private Float getCostPrice() {
 		return costPrice;
 	}
 
-	private static Float getSellingPrice() {
+	private Float getSellingPrice() {
 		return sellingPrice;
 	}
 
-	private static int getQuantity() {
+	private int getQuantity() {
 		return quantity;
 	}
 
-	private static String getProductName() {
+	private String getProductName() {
 		return productName;
 	}
 
@@ -176,7 +152,7 @@ public class Product {
 		String choice = scan.nextLine();
 		if (choice.equals("yes")) {
 			System.out.println("Enter the new model number.");
-			Product.modelNumber = scan.nextLine();
+			this.modelNumber = scan.nextLine();
 		}else {
 			System.out.println(modelNumber);
 		}
@@ -188,7 +164,7 @@ public class Product {
 		String choice = scan.nextLine();
 		if (choice.equals("yes")){
 			System.out.println("Enter the new name.");
-			Product.productName = scan.nextLine();
+			this.productName = scan.nextLine();
 		}else{
 			System.out.println(productName);
 		}
@@ -200,7 +176,7 @@ public class Product {
 		String choice = scan.nextLine();
 		if (choice.equals("yes")) {
 			System.out.println("Enter the new type.");
-			Product.productType = scan.nextLine();
+			this.productType = scan.nextLine();
 		}else {
 			System.out.println(productType);
 		}
@@ -212,7 +188,7 @@ public class Product {
 		String choice = scan.nextLine();
 		if (choice.equals("yes")) {
 			System.out.println("Enter the new description.");
-			Product.description = scan.nextLine();
+			this.description = scan.nextLine();
 		}else {
 			System.out.println(description);
 		}
@@ -224,7 +200,7 @@ public class Product {
 		String choice = scan.nextLine();
 		if (choice.equals("yes")) {
 			System.out.println("Enter the new cost price.");
-			Product.costPrice = scan.nextFloat();
+			this.costPrice = scan.nextFloat();
 		}else {
 			System.out.println(costPrice);
 		}
@@ -236,7 +212,7 @@ public class Product {
 		String choice = scan.nextLine();
 		if (choice.equals("yes")) {
 			System.out.println("Enter the new selling price.");
-			Product.sellingPrice = scan.nextFloat();
+			this.sellingPrice = scan.nextFloat();
 		}else {
 			System.out.println(sellingPrice);
 		}
@@ -248,7 +224,7 @@ public class Product {
 		String choice = scan.nextLine();
 		if (choice.equals("yes")) {
 			System.out.println("Enter the new Quantity.");
-			Product.quantity = scan.nextInt();
+			this.quantity = scan.nextInt();
 		}else {
 			System.out.println(quantity);
 		}
@@ -260,7 +236,7 @@ public class Product {
 		String choice = scan.nextLine();
 		if (choice.equals("yes")) {
 			System.out.println("Enter the new colour.");
-			Product.colour = scan.nextLine();
+			this.colour = scan.nextLine();
 		}else {
 			System.out.println(colour);
 		}
@@ -272,35 +248,35 @@ public class Product {
 		String choice = scan.nextLine();
 		if (choice.equals("yes")) {
 			System.out.println("Enter the new Image name.");
-			Product.imageName = scan.nextLine();
+			this.imageName = scan.nextLine();
 		}else {
 			System.out.println(imageName);
 		}
 
 	}
 
-	private static String getColour() {
+	private String getColour() {
 		return colour;
 	}
 
-	private static String getModelNumber() {
+	private String getModelNumber() {
 		return modelNumber;
 	}
 
-	private static String getProductType() {
+	private String getProductType() {
 		return productType;
 	}
 
-	private static String getDescription() {
+	private String getDescription() {
 		return description;
 	}
 	private String getImageName(){
 		return imageName;
 	}
-	public static String[] print(){
+	public String[] print(){
 		String[] productString = new String[]{
 			getModelNumber(),getProductName(),getProductType(),
-			Integer.toString(getQuantity()),getColour(),Product.getCostPrice().toString(),
+			Integer.toString(getQuantity()),getColour(),this.getCostPrice().toString(),
 			getSellingPrice().toString(), getDescription()
 		};
 		
@@ -317,7 +293,7 @@ public class Product {
 		*/
 	}
 
-	public static void printProduct(){
+	public void printProduct(){
 		System.out.println("Brand Name:              " + getProductName() + "\n" +
 		"Serial:                " + getModelNumber() + "\n" +
 		"Product Type           " + getProductType()+"\n"+
