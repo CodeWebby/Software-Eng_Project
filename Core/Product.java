@@ -59,7 +59,9 @@ class Product {
 
 	}
 	public static void viewProduct(){
-		print();
+		for (Product p : products){
+			p.print();
+		}
 	}
 
 	public static void editProduct() {

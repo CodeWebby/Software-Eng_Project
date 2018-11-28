@@ -77,7 +77,10 @@ class Customer {
 	}
 
 	private static void viewCustomer() {
-    	tring();
+    	for (Customer e : customers){
+			e.tring();
+		}
+
 	}
 
 	private static void deleteCustomer() {
