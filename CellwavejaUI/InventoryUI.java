@@ -22,8 +22,7 @@ import java.awt.event.ActionEvent;
 
 public class InventoryUI extends JPanel {
 	private static final long serialVersionUID = 1L;
-	public JTable table;
-	//public ArrayList <Product> newProducts = new ArrayList<Product>();
+	private JTable table;
 
 	/**
 	 * Create the panel.
@@ -37,12 +36,7 @@ public class InventoryUI extends JPanel {
 		table = new JTable();
 		
 		DefaultTableModel tmodel=new DefaultTableModel();
-			/*new Object[][] {
-			},
-			new String[] {
-				"Model#","Product Name","Product Type","Quantity","Colour","Cost Price","Selling Price", "Description"
-			}
-		);*/
+
 		tmodel.addColumn("Model#");
 		tmodel.addColumn("Product Name");
 		tmodel.addColumn("Product Type");
@@ -52,14 +46,12 @@ public class InventoryUI extends JPanel {
 		tmodel.addColumn("Selling Price");
 		tmodel.addColumn("Description");
 
-
-		for (int i=0; i<addproductinformationGUI.newProducts.size(); i++){
-			tmodel.addRow(addproductinformationGUI.newProducts.get(i).print());
+		
+		if(ReadFile.readProductfile()==true) {
+			for (int i=0; i<addproductinformationGUI.newProducts.size(); i++){
+				tmodel.addRow(addproductinformationGUI.newProducts.get(i).print());
+			}
 		}
-
-		/*for (Product p : addproductinformationGUI.getNewProducts()){
-			tmodel.addRow(Product p.print());
-		}*/
 		table.setModel(tmodel);
 		scrollPane.setViewportView(table);
 		

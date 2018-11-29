@@ -1,22 +1,31 @@
 package CellwavejaUI;
+import Core.*;
+import Util.DateUtil;
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
-
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.util.*;
+import javax.swing.*;
+import javax.swing.filechooser.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.image.*;
+import java.util.Date;
+import java.text.*;
+//import java.util.
 
 public class AddnewTransactiontofile extends JPanel {
 	private static final long serialVersionUID = 1L;
-	private JTextField textField_7ProductModelNumber;
+	
+	private Date transactionDate;
+	private String cashOrCard;
+    private String customerId;
+    private String customerName;
+    private String productModelNumber;
+    private String productName;
+    private String productType;
+	private String productColour;
+	private Float cashTendered;
+	
+	public static ArrayList<Transaction> newTransactions = new ArrayList<Transaction>();
 
 	/**
 	 * Create the panel.
@@ -42,6 +51,11 @@ public class AddnewTransactiontofile extends JPanel {
 		lblCustomerName.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblCustomerName.setBounds(224, 137, 231, 21);
 		panel.add(lblCustomerName);
+
+		JLabel lblProductModelnumber = new JLabel("Product Model#");
+		lblProductModelnumber.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblProductModelnumber.setBounds(319, 182, 130, 16);
+		panel.add(lblProductModelnumber);
 		
 		JLabel lblProductName = new JLabel("Product Name:\r\n");
 		lblProductName.setFont(new Font("Tahoma", Font.PLAIN, 18));
@@ -62,6 +76,12 @@ public class AddnewTransactiontofile extends JPanel {
 		lblQuantity.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblQuantity.setBounds(319, 364, 130, 25);
 		panel.add(lblQuantity);
+
+		/*JTextField textField_CashTendered = new JTextField();
+		textField_CashTendered.setToolTipText("Enter a number e.g 14 or 20\r\n");
+		textField_CashTendered.setColumns(10);
+		textField_CashTendered.setBounds(467, 367, 366, 22);
+		panel.add(textField_CashTendered);*/
 		
 		JTextField textFieldCustomerID = new JTextField();
 		textFieldCustomerID.setBounds(467, 91, 366, 22);
@@ -72,17 +92,16 @@ public class AddnewTransactiontofile extends JPanel {
 		textField_1CustomerName.setColumns(10);
 		textField_1CustomerName.setBounds(467, 136, 366, 22);
 		panel.add(textField_1CustomerName);
+
+		JTextField textField_7ProductModelNumber = new JTextField();
+		textField_7ProductModelNumber.setBounds(467, 181, 366, 22);
+		panel.add(textField_7ProductModelNumber);
+		textField_7ProductModelNumber.setColumns(10);
 		
 		JTextField textField_2ProductName = new JTextField();
 		textField_2ProductName.setColumns(10);
 		textField_2ProductName.setBounds(467, 230, 366, 22);
 		panel.add(textField_2ProductName);
-		
-		JTextField txtCashOrCard = new JTextField();
-		txtCashOrCard.setToolTipText("Enter a number e.g 14 or 20\r\n");
-		txtCashOrCard.setColumns(10);
-		txtCashOrCard.setBounds(467, 367, 366, 22);
-		panel.add(txtCashOrCard);
 		
 		JTextField textField_4ProductType = new JTextField();
 		textField_4ProductType.setColumns(10);
@@ -94,28 +113,46 @@ public class AddnewTransactiontofile extends JPanel {
 		textField_6Colour.setColumns(10);
 		textField_6Colour.setBounds(468, 320, 366, 22);
 		panel.add(textField_6Colour);
+
+		JTextField textField_7CashOrCard = new JTextField();
+		textField_7CashOrCard.setToolTipText("Enter a number e.g 14 or 20\r\n");
+		textField_7CashOrCard.setColumns(10);
+		textField_7CashOrCard.setBounds(467, 367, 366, 22);
+		panel.add(textField_7CashOrCard);
 		
-		JLabel lblProductModelnumber = new JLabel("Product Model#");
-		lblProductModelnumber.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblProductModelnumber.setBounds(319, 182, 130, 16);
-		panel.add(lblProductModelnumber);
-		
-		textField_7ProductModelNumber = new JTextField();
-		textField_7ProductModelNumber.setBounds(467, 181, 366, 22);
-		panel.add(textField_7ProductModelNumber);
-		textField_7ProductModelNumber.setColumns(10);
-		
-		JButton btnNewButton = new JButton("Save Transaction",new ImageIcon(addproductinformationGUI.class.getResource("/images/saveicon.PNG")));
+		JButton btnNewButton = new JButton("Save Transaction");//,new ImageIcon(addproductinformationGUI.class.getResource("/images/saveicon.PNG")));
 		btnNewButton.setBackground(Color.decode("#BEE5F9"));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				//DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+				//Calendar cal = Calendar.getInstance();
+				//transactionDate = (dateFormat.format(cal.getTime()));
+				String today = DateUtil.today();
+				transactionDate = DateUtil.stringToDate(today);
+
+
 				boolean success=true;		
-				if(textField_2ProductName.getText().isEmpty()||txtCashOrCard.getText().isEmpty()||textField_4ProductType.getText().isEmpty()||textField_6Colour.getText().isEmpty()) {
+				if(textField_2ProductName.getText().isEmpty()||textField_7CashOrCard.getText().isEmpty()||textField_4ProductType.getText().isEmpty()||textField_6Colour.getText().isEmpty()) {
 					success=false;
 					JOptionPane.showMessageDialog(null, "INPUT DATA IN ALL FIELDS", "Input Error", JOptionPane.INFORMATION_MESSAGE);
 				}
 				if (success==true) {
+					final int transactionNum = newTransactions.size()+1;
+
+					cashOrCard = textField_7CashOrCard.getText();
+					customerId = textFieldCustomerID.getText();
+					customerName = textField_1CustomerName.getText();
+					productModelNumber = textField_7ProductModelNumber.getText();
+					productName = textField_2ProductName.getText();
+					productType = textField_4ProductType.getText();
+					productColour = textField_6Colour.getText();
+					//cashTendered = Float.valueOf(textField_CashTendered.getText());
+					cashTendered = 2000f;
+					
+
 					removeAll();
+					newTransactions.add(new Transaction(transactionNum, transactionDate, cashOrCard, customerId, customerName, productModelNumber,
+										productName, productType, productColour, cashTendered));
 					add(new TransactionInformationUI(),BorderLayout.CENTER);
 					revalidate();
 				}	
@@ -125,7 +162,7 @@ public class AddnewTransactiontofile extends JPanel {
 		btnNewButton.setBounds(617, 439, 258, 101);
 		panel.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("Cancel\r\n",new ImageIcon(addproductinformationGUI.class.getResource("/images/cancelicon.PNG")));
+		JButton btnNewButton_1 = new JButton("Cancel\r\n");//,new ImageIcon(addproductinformationGUI.class.getResource("/images/cancelicon.PNG")));
 		btnNewButton_1.setBackground(Color.decode("#BEE5F9"));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {

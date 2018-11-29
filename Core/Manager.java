@@ -9,13 +9,14 @@ import java.util.regex.Pattern;
 public class Manager {
 
     private static String confirmhere = null;
-    private  static String Name;
+    private static String Name;
     private static String Username = null;
     private static String Password = null;
 
     private static String Email;
     private static String Telephone;
-     private static final List<String> errorList = new ArrayList<>();
+    private static final List<String> errorList = new ArrayList<>();
+    private static boolean allowUser;
 
     public static boolean Manager1(){
         Scanner reader = new Scanner(System.in);
@@ -61,76 +62,24 @@ public class Manager {
 
     }
 
-    public Manager(String username, String password    ){
-        Scanner reader = new Scanner(System.in);
-        if (validUsername(username)){
-            if(validPassword(password)){
-                System.out.println("Enter the last 4 digits of your phone number : ");
-                String last = reader.nextLine();
-                  String num = getTelephone().substring(getTelephone().length() - 4);
-
-                  if(last.equals(num) ){
-                      System.out.println(" show options for the client to choose");
-                      System.out.println("Command Options: ");
-                      System.out.println("P: Product");
-                      System.out.println("C: Customer");
-                      System.out.println("T: Transaction");
-                      System.out.println("q: Quit");
-                      Scanner scan = new Scanner(System.in);
-                      String choice = scan.nextLine();
-                      do {
-                          switch (choice) {
-                              case "P":
-
-                                  System.out.println("Command Options: ");
-                                  System.out.println("C: Create Product");
-                                  System.out.println("V: View Product");
-                                  System.out.println("E: Edit Product");
-                                  System.out.println("D: Delete Product");
-                                  System.out.println("q: Quit");
-                                  String ch = scan.nextLine();
-                                  do {
-                                      switch (ch){
-                                          case "C":
-                                              //Product.createProduct();
-                                              break;
-                                          case "V":
-                                              //viewProduct();
-                                              break;
-                                          case "E":
-                                            //  Product.editProduct();
-                                              break;
-                                          case "D":
-                                              //Product.deleteProduct();
-                                              break;
-                                      }
-                                  } while (!ch.equals("q"));
-                                  break;
-
-
-                              case "C":
-                                  Customer.menu();
-
-                                  break;
-                              case "T":
-                                  System.out.println("Transaction class");
-                                  break;
-
-
-                          }
-                      } while (!choice.equals("q"));
-
-                  }
-             }else{
-                System.out.println("Invalid password");
-            }
-        }else{
-            System.out.println("Invalid username ");
-        }
-
+    public Manager(String username, String password){
+        //Scanner reader = new Scanner(System.in);
+        //try{
+        if (isValid(password, errorList)){
+            Manager.Username = username;
+            Manager.Password = password;
+            Manager.allowUser = true;
+        } 
+        //}catch (Exception e){
+        //    System.out.println("Invalid Password");
+            
+        //}
+            
     }
 
-
+    public static boolean isUserAllowed(){
+        return allowUser;
+    }
 
     private boolean validPassword(String passwor){
         return passwor.equals(getPassword());
@@ -139,6 +88,7 @@ public class Manager {
     private boolean validUsername(String username){
         return username.equals( getUsername());
     }
+
     private String getUsername() {
         return Username;
     }

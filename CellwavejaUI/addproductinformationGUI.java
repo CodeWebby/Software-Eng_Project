@@ -1,38 +1,46 @@
 package CellwavejaUI;
-import Core.Product;
+import Core.*;
 
 import java.util.*;
-import javax.swing.JPanel;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
+import javax.swing.*;
+import javax.swing.filechooser.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.image.*;
+import Core.Product;
 
-import java.awt.Font;
-import java.awt.Graphics2D;
-import java.awt.Color;
-import java.awt.Dimension;
+// import java.util.*;
+// import javax.swing.JPanel;
+// import javax.swing.JLabel;
+// import javax.swing.JOptionPane;
 
-import javax.swing.JTextField;
-import javax.swing.filechooser.FileNameExtensionFilter;
-import javax.swing.JSeparator;
-import javax.swing.JTextArea;
-import javax.swing.JButton;
-import javax.swing.JFileChooser;
-import javax.swing.ImageIcon;
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
+// import java.awt.Font;
+// import java.awt.Graphics2D;
+// import java.awt.Color;
+// import java.awt.Dimension;
 
-import javax.imageio.ImageIO;
-import javax.swing.Box;
-import javax.swing.BoxLayout;
-import java.awt.GridLayout;
-import java.awt.Image;
-import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.awt.image.RenderedImage;
+// import javax.swing.JTextField;
+// import javax.swing.filechooser.FileNameExtensionFilter;
+// import javax.swing.JSeparator;
+// import javax.swing.JTextArea;
+// import javax.swing.JButton;
+// import javax.swing.JFileChooser;
+// import javax.swing.ImageIcon;
+// import java.awt.BorderLayout;
+// import java.awt.FlowLayout;
+
+// import javax.imageio.ImageIO;
+// import javax.swing.Box;
+// import javax.swing.BoxLayout;
+// import java.awt.GridLayout;
+// import java.awt.Image;
+// import java.awt.event.ActionListener;
+// import java.awt.image.BufferedImage;
+// import java.awt.image.RenderedImage;
 import java.io.File;
 import java.io.IOException;
-import java.awt.event.ActionEvent;
-import javax.swing.JScrollPane;
+// import java.awt.event.ActionEvent;
+// import javax.swing.JScrollPane;
 
 public class addproductinformationGUI extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -52,7 +60,7 @@ public class addproductinformationGUI extends JPanel {
 	private Float sellingPrice;
 	private int quantity;
 	private String modelNumber;
-	private String imageName = "image";
+	private String imageName;
 
 	public static ArrayList <Product> newProducts = new ArrayList<Product>();
 
@@ -210,6 +218,7 @@ public class addproductinformationGUI extends JPanel {
 					sellingPrice = Float.valueOf(textField_6SellingPrice.getText());
 					quantity = Integer.parseInt(textField_3Quantity.getText());
 					description = textAreaDescription.getText();
+					imageName = productImageName;
 
 					/*try {
 						ImageIO.write(rImage,"png", saveFile);
@@ -219,7 +228,9 @@ public class addproductinformationGUI extends JPanel {
 					}*/
 					removeAll();
 					newProducts.add(Product.createProduct(modelNumber, productName, productType, description, costPrice, sellingPrice, quantity, imageName, colour));
-
+					if(WriteFile.writeToProductFile()==true) {
+						JOptionPane.showMessageDialog(null, "Product Information Saved", "Notification", JOptionPane.INFORMATION_MESSAGE);
+					}
 					add(new InventoryUI(),BorderLayout.CENTER);
 					revalidate();
 					

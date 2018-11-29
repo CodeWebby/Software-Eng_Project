@@ -92,7 +92,7 @@ public class Functionsui extends JPanel {
 		panel.add(btnNewButton_3);
 		panel.add(Box.createRigidArea(new Dimension(0,20)));
 		
-		JButton btnNewButton_4 = new JButton(" Transactions");
+		JButton btnNewButton_4 = new JButton("Transactions");
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel_7.removeAll();

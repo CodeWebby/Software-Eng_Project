@@ -95,9 +95,12 @@ public class Addnewcustomertofile extends JPanel {
 					JOptionPane.showMessageDialog(null, "INPUT DATA IN ALL FIELDS", "Input Error", JOptionPane.INFORMATION_MESSAGE);
 				}
 				if (success==true) {
-					removeAll();
-					add(new CustomerInformationUI(),BorderLayout.CENTER);
-					revalidate();
+					if (WriteFile.writeToCustomerFile()==true) {
+						JOptionPane.showMessageDialog(null, "Customer Information Saved", "Notification", JOptionPane.INFORMATION_MESSAGE);
+						removeAll();
+						add(new CustomerInformationUI(),BorderLayout.CENTER);
+						revalidate();
+					}
 				}	
 			}
 		});

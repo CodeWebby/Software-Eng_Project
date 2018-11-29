@@ -1,10 +1,12 @@
 package CellwavejaUI;
+import Core.*;
 
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import java.util.*;
 
 //import com.sun.jndi.ldap.ManageReferralControl;
 
@@ -27,8 +29,8 @@ public class startuservalidation extends JFrame {
 	private JPanel contentPane;
 	private JTextField Username_field;
 	private JPasswordField passwordField;
-	private String manager_username = "";
-	private String manager_password = "";
+	private String manager_username;
+	private String manager_password;
 	
 
 	/**
@@ -51,6 +53,12 @@ public class startuservalidation extends JFrame {
 	 * Create the frame.
 	 */
 	public startuservalidation() {
+		String password;
+		String User;
+		boolean m;
+
+		m =  Manager.Manager1();
+		
 		setBackground(Color.WHITE);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1366,768);
@@ -72,14 +80,37 @@ public class startuservalidation extends JFrame {
 		lblNewLabel_1.setBackground(Color.WHITE);
 		//lblNewLabel_1.setIcon(new ImageIcon(startuservalidation.class.getResource("/images/Opera Snapshot_2018-11-12_142622_www.instagram.com.png")));
 		
+		passwordField = new JPasswordField();
+		passwordField.setBounds(803, 300, 408, 35);
+		contentPane.add(passwordField);
+		
+		
+		Username_field = new JTextField();
+		Username_field.setBounds(801, 162, 408, 35);
+		contentPane.add(Username_field);
+		Username_field.setColumns(10);
+		
+
 		Button signinbutton = new Button("Sign In");
 		signinbutton.setBounds(801, 435, 285, 68);
 		contentPane.add(signinbutton);
 		signinbutton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Functionsui f=new Functionsui();
-				setContentPane(f);
-				revalidate();
+				if (m){
+					manager_password = String.valueOf(passwordField.getPassword());
+					manager_username = String.valueOf(Username_field.getText());
+
+					if (new Manager(manager_username,manager_password).isUserAllowed()==true){
+
+						Functionsui f=new Functionsui();
+						setContentPane(f);
+						revalidate();
+					}
+
+				}
+	
+				
+				
 			}
 		});
 		signinbutton.setFont(new Font("Dialog", Font.BOLD, 16));
@@ -103,17 +134,6 @@ public class startuservalidation extends JFrame {
 		JSeparator password_separator_1 = new JSeparator();
 		password_separator_1.setBounds(801, 333, 271, 2);
 		contentPane.add(password_separator_1);
-		
-		passwordField = new JPasswordField();
-		passwordField.setBounds(803, 300, 408, 35);
-		contentPane.add(passwordField);
-		manager_password = String.valueOf(passwordField.getPassword());
-		
-		Username_field = new JTextField();
-		Username_field.setBounds(801, 162, 408, 35);
-		contentPane.add(Username_field);
-		Username_field.setColumns(10);
-		manager_username = String.valueOf(Username_field.getText());
 		
 		Panel panel_1 = new Panel();
 		panel_1.setBounds(665, 0, 683, 77);

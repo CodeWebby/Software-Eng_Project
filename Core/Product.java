@@ -130,19 +130,19 @@ public class Product {
 	}*/
 
 
-	private Float getCostPrice() {
+	public Float getCostPrice() {
 		return costPrice;
 	}
 
-	private Float getSellingPrice() {
+	public Float getSellingPrice() {
 		return sellingPrice;
 	}
 
-	private int getQuantity() {
+	public int getQuantity() {
 		return quantity;
 	}
 
-	private String getProductName() {
+	public String getProductName() {
 		return productName;
 	}
 
@@ -255,24 +255,25 @@ public class Product {
 
 	}
 
-	private String getColour() {
+	public String getColour() {
 		return colour;
 	}
 
-	private String getModelNumber() {
+	public String getModelNumber() {
 		return modelNumber;
 	}
 
-	private String getProductType() {
+	public String getProductType() {
 		return productType;
 	}
 
-	private String getDescription() {
+	public String getDescription() {
 		return description;
 	}
-	private String getImageName(){
+	public String getImageName(){
 		return imageName;
 	}
+
 	public String[] print(){
 		String[] productString = new String[]{
 			getModelNumber(),getProductName(),getProductType(),

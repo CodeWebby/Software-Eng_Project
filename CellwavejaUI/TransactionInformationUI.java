@@ -30,13 +30,22 @@ public class TransactionInformationUI extends JPanel {
 		
 		JTable table = new JTable();
 		
-		DefaultTableModel tmodel=new DefaultTableModel(
-			new Object[][] {
-			},
-			new String[] {
-				"Transaction #","Customer ID","Customer Name","Product Name","Product Type","Colour","Date","Time","Selling Price","Paid with"
+		DefaultTableModel tmodel=new DefaultTableModel();
+			
+			tmodel.addColumn("Transaction #");
+			tmodel.addColumn("Customer ID");
+			tmodel.addColumn("Product Model #");
+			tmodel.addColumn("Product Name");
+			tmodel.addColumn("Product Type");
+			tmodel.addColumn("Product Colour");
+			tmodel.addColumn("Date & Time");
+			tmodel.addColumn("Cash tendered");
+			tmodel.addColumn("Cash || Card");
+
+			for (int i=0; i<AddnewTransactiontofile.newTransactions.size(); i++){
+				tmodel.addRow(AddnewTransactiontofile.newTransactions.get(i).print());
 			}
-		);
+
 		table.setModel(tmodel);
 		scrollPane.setViewportView(table);
 		
@@ -48,7 +57,7 @@ public class TransactionInformationUI extends JPanel {
 		lblProductInventory.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		panel.add(lblProductInventory);
 		
-		JButton btnNewButton = new JButton("",new ImageIcon(InventoryUI.class.getResource("/images/add product.png")));
+		JButton btnNewButton = new JButton("");//,new ImageIcon(InventoryUI.class.getResource("/images/add product.png")));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				removeAll();
@@ -60,7 +69,7 @@ public class TransactionInformationUI extends JPanel {
 		btnNewButton.setPreferredSize(new Dimension (30,30));
 		panel.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("",new ImageIcon(InventoryUI.class.getResource("/images/trashcanicon.PNG")));
+		JButton btnNewButton_1 = new JButton("");//,new ImageIcon(InventoryUI.class.getResource("/images/trashcanicon.PNG")));
 		btnNewButton_1.setToolTipText("Remove Transaction");
 		btnNewButton_1.setPreferredSize(new Dimension(30,30));
 		panel.add(btnNewButton_1);
