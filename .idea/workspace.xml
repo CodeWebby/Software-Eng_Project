@@ -1,25 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="00e374e4-fb1c-4746-bc7c-502b868ac41b" name="Default Changelist" comment="version 1.1.9 of the cellwaveja system.&#10;  changes made to the product class and transaction class.">
+    <list default="true" id="00e374e4-fb1c-4746-bc7c-502b868ac41b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CellwavejaMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/CellwavejaMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CellwavejaUI/AddnewTransactiontofile.java" beforeDir="false" afterPath="$PROJECT_DIR$/CellwavejaUI/AddnewTransactiontofile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CellwavejaUI/Addnewcustomertofile.java" beforeDir="false" afterPath="$PROJECT_DIR$/CellwavejaUI/Addnewcustomertofile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CellwavejaUI/CalculateTaxesUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/CellwavejaUI/CalculateTaxesUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CellwavejaUI/CustomerInformationUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/CellwavejaUI/CustomerInformationUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CellwavejaUI/Functionsui.java" beforeDir="false" afterPath="$PROJECT_DIR$/CellwavejaUI/Functionsui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CellwavejaUI/InventoryUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/CellwavejaUI/InventoryUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CellwavejaUI/TransactionInformationUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/CellwavejaUI/TransactionInformationUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CellwavejaUI/addproductinformationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/CellwavejaUI/addproductinformationGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CellwavejaUI/profitLostUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/CellwavejaUI/profitLostUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CellwavejaUI/startuservalidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/CellwavejaUI/startuservalidation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/DateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DateUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Manager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Transaction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Software-Eng_Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Software-Eng_Project/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Software-Eng_Project/CellwavejaMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Software-Eng_Project/CellwavejaMain.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Software-Eng_Project/Core/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Software-Eng_Project/Core/Customer.class" afterDir="false" />
@@ -200,7 +183,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543517110152" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543517411260" />
     <property name="last_opened_file_path" value="$USER_HOME$/Documents/Comp 1161/Lab06b" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
@@ -291,7 +274,14 @@
       <option name="project" value="LOCAL" />
       <updated>1543512695292</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="version 1.1.10 of the cellwaveja system.&#10;  changes made to the product class and transaction class.">
+      <created>1543517313887</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1543517313887</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -367,7 +357,8 @@
     <MESSAGE value="version 1.1.6 of the cellwaveja system.&#10;  changes made to the product class and manager class, Customer class and Address class." />
     <MESSAGE value="version 1.1.7 of the cellwaveja system.&#10;  changes made to the product class and transaction class." />
     <MESSAGE value="version 1.1.9 of the cellwaveja system.&#10;  changes made to the product class and transaction class." />
-    <option name="LAST_COMMIT_MESSAGE" value="version 1.1.9 of the cellwaveja system.&#10;  changes made to the product class and transaction class." />
+    <MESSAGE value="version 1.1.10 of the cellwaveja system.&#10;  changes made to the product class and transaction class." />
+    <option name="LAST_COMMIT_MESSAGE" value="version 1.1.10 of the cellwaveja system.&#10;  changes made to the product class and transaction class." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Software-Eng_Project.iml">
