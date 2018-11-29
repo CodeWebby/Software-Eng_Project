@@ -89,7 +89,7 @@ public class Transaction {
 					Transaction.getTransactions();
 					break;
 
-			}
+			}break;
 		} while (!ch.equals("q"));
 
 	}

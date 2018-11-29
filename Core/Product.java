@@ -45,30 +45,34 @@ public class Product {
 	}
 
 	public static void createProduct(){
+		try {
 
-		Scanner read = new Scanner(System.in);
-		System.out.println("Enter the model number of the product.");
-		modelNumber = read.nextLine() ;
-		System.out.println("Enter the name of the product.");
-		productName = read.nextLine() ;
-		System.out.println("Enter the type of the product.");
-		productType = read.nextLine() ;
-		System.out.println("Enter the description of the product.");
-		description = read.nextLine() ;
-		System.out.println("Enter the cost price of the product.");
-		costPrice = read.nextDouble() ;
-		System.out.println("Enter the selling price of the product.");
-		sellingPrice = read.nextDouble() ;
-		System.out.println("Enter the quantity of the product.");
-		quantity = read.nextInt() ;
-		System.out.println("Enter the colour  of the product.");
-		colour = read.nextLine() ;
+			Scanner read = new Scanner(System.in);
+			System.out.println("Enter the model number of the product.");
+			modelNumber = read.nextLine();
+			System.out.println("Enter the name of the product.");
+			productName = read.nextLine();
+			System.out.println("Enter the type of the product.");
+			productType = read.nextLine();
+			System.out.println("Enter the description of the product.");
+			description = read.nextLine();
+			System.out.println("Enter the cost price of the product.");
+			costPrice = read.nextDouble();
+			System.out.println("Enter the selling price of the product.");
+			sellingPrice = read.nextDouble();
+			System.out.println("Enter the quantity of the product.");
+			quantity = read.nextInt();
+			System.out.println("Enter the colour  of the product.");
+			colour = read.nextLine();
 
-		Product e = new Product(modelNumber, productName, productType, description, costPrice, sellingPrice, quantity, imageName, colour);
-		products.add(e);
+			Product e = new Product(modelNumber, productName, productType, description, costPrice, sellingPrice, quantity, imageName, colour);
+			products.add(e);
+		}catch (Exception e){
+			System.out.print("Something went wrong");}
+		}
 
 
-	}
+
 	public static void viewProduct(){
 		String output = null;
 		for (int i = 0; i<products.size(); i++){
@@ -103,44 +107,53 @@ public class Product {
 				System.out.println("q: Quit");
 
 				choice = scan.nextLine();
+			}else {
+				editProduct();
 			}
 			do {
+				try {
 
-				switch (Objects.requireNonNull(choice)) {
-					case "m":
-						a.setModelNumber(getModelNumber());
-						break;
-					case "N":
-						a.setProductName(getProductName());
-						break;
-					case "t":
-						a.setProductType(getProductType());
-						break;
-					case "d":
-						a.setDescription(getDescription());
-						break;
-					case "C":
-						a.setCostPrice(getCostPrice());
-						break;
-					case "s":
-						a.setSellingPrice(getSellingPrice());
-						break;
-					case "Q":
-						a.setQuantity(getQuantity());
-						break;
-					case "c":
-						a.setColour(getColour());
-						break;
-					case "I":
-						a.setImageName(a.getImageName());
-						break;
+					switch (Objects.requireNonNull(choice)) {
+						case "m":
+							a.setModelNumber(getModelNumber());
+							break;
+						case "N":
+							a.setProductName(getProductName());
+							break;
+						case "t":
+							a.setProductType(getProductType());
+							break;
+						case "d":
+							a.setDescription(getDescription());
+							break;
+						case "C":
+							a.setCostPrice(getCostPrice());
+							break;
+						case "s":
+							a.setSellingPrice(getSellingPrice());
+							break;
+						case "Q":
+							a.setQuantity(getQuantity());
+							break;
+						case "c":
+							a.setColour(getColour());
+							break;
+						case "I":
+							a.setImageName(a.getImageName());
+							break;
 
-				} // end of switch
-			} while (!choice.equals("q"));
+					} // end of switch
+				} catch (Exception e) {
+					editProduct();
+				}
+			}
+				while (!choice.equals("q"));
 
 
-		}
-	}
+
+
+	}scan.reset();
+	scan.close();}
 
 
 

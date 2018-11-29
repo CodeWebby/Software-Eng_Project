@@ -70,7 +70,7 @@ public class Manager {
 								String ch = scan.nextLine();
 								do {
 									switch (ch) {
-										case "C":
+										case "C" :
 											Product.createProduct();
 											break;
 										case "V":
@@ -82,7 +82,7 @@ public class Manager {
 										case "D":
 											Product.deleteProduct();
 											break;
-									}
+									}break;
 								} while (!ch.equals("q"));
 								break;
 
@@ -99,9 +99,10 @@ public class Manager {
 							case "":
 								System.out.println("Invalid option");
 								new Manager(username,password);
+								break;
 
 
-						}
+						}break;
 					} while (!choice.equals("q"));
 
 				}

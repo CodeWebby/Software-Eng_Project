@@ -59,7 +59,7 @@ public class Customer {
 								case "D":
 									Customer.deleteCustomer();
 									break;
-							}
+							}break;
 						} while (!ch.equals("q"));
 
 	}
@@ -72,17 +72,17 @@ public class Customer {
     	String parish_ = "none";
     	String email_ = "none";
 		Scanner read = new Scanner(System.in);
-		System.out.println("Enter the model number of the product.");
+		System.out.println("Enter the Id number of the client.");
 		 clid = read.nextLine() ;
-		System.out.println("Enter the name of the product.");
+		System.out.println("Enter the name of the Customer.");
 		 name_ = read.nextLine() ;
-		System.out.println("Enter the type of the product.");
+		System.out.println("Enter the telephone.");
 		 tel_ = read.nextLine() ;
-		System.out.println("Enter the description of the product.");
+		System.out.println("Enter the address.");
 		 address_ = read.nextLine() ;
-		System.out.println("Enter the cost price of the product.");
+		System.out.println("Enter the parish.");
 		 parish_ = read.nextLine() ;
-		System.out.println("Enter the selling price of the product.");
+		System.out.println("Enter the email.");
 		 email_ = read.nextLine() ;
 
 
@@ -164,7 +164,7 @@ public class Customer {
 						setAddresses(getAddresses());
 						break;
 
-				} // end of switch
+				} break;// end of switch
 			} while (!choice.equals("q"));
 
 
