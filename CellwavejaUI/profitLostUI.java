@@ -1,15 +1,13 @@
 package CellwavejaUI;
 
 import javax.swing.JPanel;
-import java.awt.BorderLayout;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 
-public class profitLostUI extends JPanel {
+class profitLostUI extends JPanel {
 	private static final long serialVersionUID = 1L;
-	private JTextField textField;
 
 	/**
 	 * Create the panel.
@@ -27,8 +25,8 @@ public class profitLostUI extends JPanel {
 		lblEnterSerialNumber.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblEnterSerialNumber.setBounds(12, 69, 168, 30);
 		add(lblEnterSerialNumber);
-		
-		textField = new JTextField();
+
+		JTextField textField = new JTextField();
 		textField.setBounds(183, 71, 116, 30);
 		add(textField);
 		textField.setColumns(10);

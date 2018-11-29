@@ -10,17 +10,12 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.FlowLayout;
-import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.event.MouseMotionAdapter;
-import javax.swing.JTextField;
-import javax.swing.Popup;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class InventoryUI extends JPanel {
+class InventoryUI extends JPanel {
 	private static final long serialVersionUID = 1L;
-	private JTable table;
 
 	/**
 	 * Create the panel.
@@ -30,8 +25,8 @@ public class InventoryUI extends JPanel {
 		
 		JScrollPane scrollPane = new JScrollPane();
 		add(scrollPane, BorderLayout.CENTER);
-		
-		table = new JTable();
+
+		JTable table = new JTable();
 		
 		DefaultTableModel tmodel=new DefaultTableModel(
 			new Object[][] {

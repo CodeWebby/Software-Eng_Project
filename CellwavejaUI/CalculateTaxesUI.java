@@ -1,16 +1,13 @@
 package CellwavejaUI;
 
 import javax.swing.JPanel;
-import java.awt.BorderLayout;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
-import javax.swing.DropMode;
 
-public class CalculateTaxesUI extends JPanel {
+class CalculateTaxesUI extends JPanel {
 	private static final long serialVersionUID = 1L;
-	private JTextField textField;
 
 	/**
 	 * Create the panel.
@@ -29,8 +26,8 @@ public class CalculateTaxesUI extends JPanel {
 		lblEnterCurrentPercentage.setHorizontalAlignment(SwingConstants.CENTER);
 		lblEnterCurrentPercentage.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		add(lblEnterCurrentPercentage);
-		
-		textField = new JTextField();
+
+		JTextField textField = new JTextField();
 		textField.setBounds(300, 190, 72, 30);
 		add(textField);
 		textField.setColumns(10);

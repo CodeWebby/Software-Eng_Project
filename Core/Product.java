@@ -4,20 +4,20 @@ import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
 
-class Product {
-	private static String colour;
-	private static String description;
-	private static String productName;
-	private static String productType;
-	protected static Float costPrice;
-	protected static Float sellingPrice;
-	protected static int quantity;
-	private static String modelNumber;
-	private static String imageName;
-	private static final ArrayList <Product> products = new ArrayList<>();
+public class Product {
+	private static String colour = null;
+	private static String description = null;
+	private static String productName = null;
+	private static String productType = null;
+	static double costPrice = 0;
+	static double sellingPrice = 0;
+	static int quantity = 0;
+	private static String modelNumber = null;
+	private static String imageName = null;
+	static final ArrayList <Product> products = new ArrayList<>();
 
 
-	private Product(String modelNumber, String productName, String productType, String description, Float costPrice, Float sellingPrice, int quantity, String imageName, String colour) {
+	private Product(String modelNumber, String productName, String productType, String description, double costPrice, double sellingPrice, int quantity, String imageName, String colour) {
 
 		Product.modelNumber = modelNumber;
 		Product.productName = productName;
@@ -33,6 +33,17 @@ class Product {
 
 
 	}
+
+
+	public static void intialize(){
+		products.add(new Product("A12S","IponeX Case","Case","",100.50,150.50,12,"","Red"));
+		products.add(new Product("A11S","Ipone4 Case","Case","",90.50,110.50,12,"","Black"));
+		products.add(new Product("A13S","IponeX Case","Case","",100.50,150.50,12,"","Raianbow"));
+		products.add(new Product("A34F","Samsung X Case","Case","",100.50,150.50,12,"","Clear"));
+		products.add(new Product("A22S","Oppo X Case","Case","",105.50,110.50,12,"","Blue"));
+
+	}
+
 	public static void createProduct(){
 
 		Scanner read = new Scanner(System.in);
@@ -45,9 +56,9 @@ class Product {
 		System.out.println("Enter the description of the product.");
 		description = read.nextLine() ;
 		System.out.println("Enter the cost price of the product.");
-		costPrice = read.nextFloat() ;
+		costPrice = read.nextDouble() ;
 		System.out.println("Enter the selling price of the product.");
-		sellingPrice = read.nextFloat() ;
+		sellingPrice = read.nextDouble() ;
 		System.out.println("Enter the quantity of the product.");
 		quantity = read.nextInt() ;
 		System.out.println("Enter the colour  of the product.");
@@ -59,9 +70,12 @@ class Product {
 
 	}
 	public static void viewProduct(){
-		for (Product p : products){
-			p.print();
+		String output = null;
+		for (int i = 0; i<products.size(); i++){
+			output= print();
+			System.out.println(output);
 		}
+		return;
 	}
 
 	public static void editProduct() {
@@ -73,7 +87,7 @@ class Product {
 		System.out.println("Enter the model number of the product you want to edit: ");
 		String model = scan.nextLine();
 		for (Product a : products) {
-			//noinspection EqualsBetweenInconvertibleTypes,EqualsBetweenInconvertibleTypes
+			// noinspection EqualsBetweenInconvertibleTypes
 			if (a.equals(model)) {
 				System.out.println(a);
 				System.out.println("Command Options: ");
@@ -138,7 +152,7 @@ class Product {
 		Scanner read = new Scanner(System.in);
 		String delete = read.nextLine();
 		for (Product e : products) {
-			//noinspection EqualsBetweenInconvertibleTypes,EqualsBetweenInconvertibleTypes,EqualsBetweenInconvertibleTypes,EqualsBetweenInconvertibleTypes
+			// noinspection EqualsBetweenInconvertibleTypes
 			if ( e.equals(delete)) {
 				products.remove(e);
 				System.out.println("Product deleted");
@@ -150,11 +164,11 @@ class Product {
 	}
 
 
-	protected static float getCostPrice() {
+	private static double getCostPrice() {
 		return costPrice;
 	}
 
-	protected static float getSellingPrice() {
+	static double getSellingPrice() {
 		return sellingPrice;
 	}
 
@@ -162,7 +176,7 @@ class Product {
 		return quantity;
 	}
 
-	private static String getProductName() {
+	public static String getProductName() {
 		return productName;
 	}
 
@@ -215,25 +229,25 @@ class Product {
 		}
 	}
 
-	private void setCostPrice(Float costPrice) {
+	private void setCostPrice(double costPrice) {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Do you really want to change the cost price (yes or no)?  ");
 		String choice = scan.nextLine();
 		if (choice.equals("yes")) {
 			System.out.println("Enter the new cost price.");
-			Product.costPrice = scan.nextFloat();
+			Product.costPrice = scan.nextDouble();
 		}else {
 			System.out.println(costPrice);
 		}
 	}
 
-	private void setSellingPrice(Float sellingPrice) {
+	private void setSellingPrice(double sellingPrice) {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Do you really want to change the selling price (yes or no)?  ");
 		String choice = scan.nextLine();
 		if (choice.equals("yes")) {
 			System.out.println("Enter the new selling price.");
-			Product.sellingPrice = scan.nextFloat();
+			Product.sellingPrice = scan.nextDouble();
 		}else {
 			System.out.println(sellingPrice);
 		}
@@ -280,7 +294,7 @@ class Product {
 		return colour;
 	}
 
-	private static String getModelNumber() {
+	public static String getModelNumber() {
 		return modelNumber;
 	}
 
@@ -294,7 +308,7 @@ class Product {
 	private String getImageName(){
 		return imageName;
 	}
-	private static String print(){
+	static String print(){
 		return  "Brand Name:              " + getProductName() + "\n" +
 				"Serial:                " + getModelNumber() + "\n" +
 				"Product Type           " + getProductType()+"\n"+

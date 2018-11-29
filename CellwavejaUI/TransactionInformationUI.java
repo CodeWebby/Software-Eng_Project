@@ -15,7 +15,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class TransactionInformationUI extends JPanel {
+class TransactionInformationUI extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 

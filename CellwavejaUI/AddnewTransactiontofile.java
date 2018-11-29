@@ -5,7 +5,6 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import java.awt.BorderLayout;
@@ -14,9 +13,8 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class AddnewTransactiontofile extends JPanel {
+class AddnewTransactiontofile extends JPanel {
 	private static final long serialVersionUID = 1L;
-	private JTextField textField_7ProductModelNumber;
 
 	/**
 	 * Create the panel.
@@ -99,8 +97,8 @@ public class AddnewTransactiontofile extends JPanel {
 		lblProductModelnumber.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblProductModelnumber.setBounds(319, 182, 130, 16);
 		panel.add(lblProductModelnumber);
-		
-		textField_7ProductModelNumber = new JTextField();
+
+		JTextField textField_7ProductModelNumber = new JTextField();
 		textField_7ProductModelNumber.setBounds(467, 181, 366, 22);
 		panel.add(textField_7ProductModelNumber);
 		textField_7ProductModelNumber.setColumns(10);
@@ -114,7 +112,7 @@ public class AddnewTransactiontofile extends JPanel {
 					success=false;
 					JOptionPane.showMessageDialog(null, "INPUT DATA IN ALL FIELDS", "Input Error", JOptionPane.INFORMATION_MESSAGE);
 				}
-				if (success==true) {
+				if (success) {
 					removeAll();
 					add(new TransactionInformationUI(),BorderLayout.CENTER);
 					revalidate();

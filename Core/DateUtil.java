@@ -34,45 +34,6 @@ class DateUtil{
     }
 
     /**
-     * Returns a date corresponding to n days before today's date
-     * Please note, if n is negative the result will be n days after today
-     *
-     * @param numOfDays the number of days before today
-     *
-     * @return          the date corresponding to numOfDays before today.
-     */
-    public static Date dateBeforeToday(int numOfDays){
-        Calendar today  = Calendar.getInstance();
-
-        today.set(today.get(Calendar.YEAR), today.get(Calendar.MONTH) ,
-                  today.get(Calendar.DAY_OF_MONTH) - numOfDays, 0, 0, 0);
-
-        return today.getTime();
-    }
-
-    /**
-     * Returns an integer representation of the current year
-     *
-     * @return          an integer representation of the current year
-     */
-    public static int getCurrentYear() {
-        return Calendar.getInstance().get(Calendar.YEAR);
-    }
-
-    /**
-     * Returns a date corresponding to n days after the given date
-     * Please note, if n is a negative number the result will be n days before the given date
-     *
-     * @param date      the subject date that you want to project from
-     * @param numOfDays the number of days after the given date
-     *
-     * @return          the date corresponding to numOfDays before today.
-     */
-    public static Date dateAfterDate(Date date, int numOfDays) {
-        return new Date(date.getTime()+ (1000 * 60 * 60 * 24 * numOfDays));
-    }
-
-    /**
      * Returns a Date object corresponding to the input format specified
      * A default format is yyyy-MM-dd. An overloaded version of this method
      * provides handling for that format.
@@ -99,54 +60,4 @@ class DateUtil{
         }
     }
 
-    public static Date stringToDate(String dateStr) {
-        return stringToDate(dateStr, "yyyy-MM-dd");
-    }
-
-    /**
-     * Returns a date corresponding to n days after the given date
-     * Please note, if n is a negative number the result will be n days before the given date
-     *
-     * @param date      the date to be converted to a string representation
-     * @param format    the format that the date string is to be converted to
-     *
-     * @return          the formatted string corresponding to the given date object.
-     * @see             java.text.SimpleDateFormat
-     */
-    public static String dateToString(Date date, String format){
-
-        return new SimpleDateFormat(format, Locale.ENGLISH).format(date);
-    }
-
-    /**
-     * Returns an integer counting the number of days between two dates
-     * The earlier date should be specified first
-     *
-     * @param dateFrom  the start date for the calculation range
-     * @param dateTo    end date for the calculation range
-     *
-     * @return          the number of days between the two dates
-     *
-     */
-    public static int dateDiffDays(Date dateFrom, Date dateTo){
-        long timeTo = dateTo.getTime(),
-             timeFrom = dateFrom.getTime();
-        return (int)Math.floor((timeTo - timeFrom)/(1000 * 60 * 60 * 24));
-    }
-
-    /**
-     * Returns an integer counting the number of hours between two dates
-     * The earlier date should be specified first
-     *
-     * @param dateFrom  the start date for the calculation range
-     * @param dateTo    end date for the calculation range
-     *
-     * @return          the number of days between the two dates
-     *
-     */
-    public static int dateDiffHours(Date dateFrom, Date dateTo){
-        long timeTo = dateTo.getTime(),
-             timeFrom = dateFrom.getTime();
-        return (int)Math.ceil((timeTo - timeFrom)/60 * 60 * 1000);
-    }
 }

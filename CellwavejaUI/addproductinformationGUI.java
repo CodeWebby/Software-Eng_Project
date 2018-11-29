@@ -7,22 +7,16 @@ import javax.swing.JOptionPane;
 import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.Color;
-import java.awt.Dimension;
 
 import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import javax.swing.JSeparator;
 import javax.swing.JTextArea;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.ImageIcon;
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
 
 import javax.imageio.ImageIO;
-import javax.swing.Box;
-import javax.swing.BoxLayout;
-import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
@@ -32,15 +26,15 @@ import java.io.IOException;
 import java.awt.event.ActionEvent;
 import javax.swing.JScrollPane;
 
-public class addproductinformationGUI extends JPanel {
+class addproductinformationGUI extends JPanel {
 	private static final long serialVersionUID = 1L;
-	private JTextField textFieldModelNumber;
-	private JTextField textField_1ProductName;
-	private JTextField textField_2ProductType;
-	private JTextField textField_3Quantity;
-	private JTextField textField_4Colour;
-	private JTextField textField_5CostPrice;
-	private JTextField textField_6SellingPrice;
+	private final JTextField textFieldModelNumber;
+	private final JTextField textField_1ProductName;
+	private final JTextField textField_2ProductType;
+	private final JTextField textField_3Quantity;
+	private final JTextField textField_4Colour;
+	private final JTextField textField_5CostPrice;
+	private final JTextField textField_6SellingPrice;
 	private String productImageName;
 	private RenderedImage rImage;
 	private File saveFile;
@@ -181,7 +175,7 @@ public class addproductinformationGUI extends JPanel {
 					success=false;
 					JOptionPane.showMessageDialog(null, "INPUT DATA IN ALL FIELDS", "Input Error", JOptionPane.INFORMATION_MESSAGE);
 				}	
-				if (success==true) {
+				if (success) {
 					try {
 						ImageIO.write(rImage,"png", saveFile);
 					} catch (IOException ioe) {
@@ -224,7 +218,7 @@ public class addproductinformationGUI extends JPanel {
 				FileNameExtensionFilter imageFilter=new FileNameExtensionFilter("*.Images","jpg","gif","png");
 				productImageLoc.addChoosableFileFilter(imageFilter);
 				int result=productImageLoc.showSaveDialog(null);
-				if(result==productImageLoc.APPROVE_OPTION) {
+				if(result== JFileChooser.APPROVE_OPTION) {
 					File selectedImage= productImageLoc.getSelectedFile();
 					String imagePath=selectedImage.getAbsolutePath();
 					Image i= new ImageIcon(imagePath).getImage();
@@ -235,11 +229,11 @@ public class addproductinformationGUI extends JPanel {
 					BufferedImage bImage      = new BufferedImage(newi.getWidth(null), newi.getHeight(null), BufferedImage.TYPE_INT_RGB); 
 					Graphics2D bImageGraphics = bImage.createGraphics();
 					bImageGraphics.drawImage(newi, null, null);
-					rImage  = (RenderedImage)bImage;
+					rImage  = bImage;
 					
 					
 					
-				}else if (result==productImageLoc.CANCEL_OPTION) {
+				}else if (result== JFileChooser.CANCEL_OPTION) {
 					JOptionPane.showMessageDialog(null,"no Image selected","",JOptionPane.INFORMATION_MESSAGE);
 					
 				}

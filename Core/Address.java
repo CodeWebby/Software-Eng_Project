@@ -9,19 +9,11 @@ class Address {
         parish = p;
     }
 
-    public Address(String street, String p){
-        this.address = street;
-        parish = Parish.findByName(p);
-    }
-
-    private String getAddress(){
+	private String getAddress(){
         return String.format("%s, %s", this.address, parish.fullName());
     }
-    public String getAddressOnly(){
-        return this.address;
-    }
 
-    static Parish getParish(){
+	static Parish getParish(){
         return parish;
     }
 

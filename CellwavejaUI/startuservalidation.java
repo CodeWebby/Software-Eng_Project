@@ -15,18 +15,13 @@ import javax.swing.JSeparator;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JPasswordField;
-import javax.swing.ImageIcon;
-import javax.swing.SwingConstants;
 import java.awt.Panel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class startuservalidation extends JFrame {
+class startuservalidation extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	private JPanel contentPane;
-	private JTextField Username_field;
-	private JPasswordField passwordField;
 	private String manager_username = "";
 	private String manager_password = "";
 	
@@ -50,11 +45,11 @@ public class startuservalidation extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public startuservalidation() {
+	private startuservalidation() {
 		setBackground(Color.WHITE);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1366,768);
-		contentPane = new JPanel();
+		JPanel contentPane = new JPanel();
 		contentPane.setBackground(Color.decode("#FAFAFA"));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -80,6 +75,7 @@ public class startuservalidation extends JFrame {
 				Functionsui f=new Functionsui();
 				setContentPane(f);
 				revalidate();
+
 			}
 		});
 		signinbutton.setFont(new Font("Dialog", Font.BOLD, 16));
@@ -103,17 +99,17 @@ public class startuservalidation extends JFrame {
 		JSeparator password_separator_1 = new JSeparator();
 		password_separator_1.setBounds(801, 333, 271, 2);
 		contentPane.add(password_separator_1);
-		
-		passwordField = new JPasswordField();
+
+		JPasswordField passwordField = new JPasswordField();
 		passwordField.setBounds(803, 300, 408, 35);
 		contentPane.add(passwordField);
 		manager_password = String.valueOf(passwordField.getPassword());
-		
-		Username_field = new JTextField();
-		Username_field.setBounds(801, 162, 408, 35);
-		contentPane.add(Username_field);
-		Username_field.setColumns(10);
-		manager_username = String.valueOf(Username_field.getText());
+
+		JTextField username_field = new JTextField();
+		username_field.setBounds(801, 162, 408, 35);
+		contentPane.add(username_field);
+		username_field.setColumns(10);
+		manager_username = String.valueOf(username_field.getText());
 		
 		Panel panel_1 = new Panel();
 		panel_1.setBounds(665, 0, 683, 77);
@@ -126,11 +122,4 @@ public class startuservalidation extends JFrame {
 		panel_2.setBackground(Color.decode("#8CD4F0"));
 	}
 
-	public String getManagerPassword(){
-		return manager_password;
-	}
-
-	public String getManagerUsername(){
-		return manager_username;
-	}
 }

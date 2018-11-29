@@ -14,7 +14,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Addnewcustomertofile extends JPanel {
+class Addnewcustomertofile extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 
@@ -94,7 +94,7 @@ public class Addnewcustomertofile extends JPanel {
 					success=false;
 					JOptionPane.showMessageDialog(null, "INPUT DATA IN ALL FIELDS", "Input Error", JOptionPane.INFORMATION_MESSAGE);
 				}
-				if (success==true) {
+				if (success) {
 					removeAll();
 					add(new CustomerInformationUI(),BorderLayout.CENTER);
 					revalidate();

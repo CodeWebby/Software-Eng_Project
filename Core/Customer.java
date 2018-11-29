@@ -3,18 +3,21 @@ import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
 
-class Customer {
+public class Customer {
     private static String customerid = null;
     private static String telephone = null;
     private static String name = null;
     private static String email = null;
-    private static ArrayList<Address> addresses = new ArrayList<>();
+    private static final ArrayList<Address> addresses = new ArrayList<>();
     private static ArrayList<Transaction> transactions;
-	private static final ArrayList <Customer> customers = new ArrayList<>();
+	static final ArrayList <Customer> customers = new ArrayList<>();
 
-    public Customer(String clid, String name_, String address_, String parish_,
-                  String tel_, String email_){
-        Customer.transactions = getTransactions();
+
+
+
+    private Customer(String clid, String name_, String address_, String parish_,
+					 String tel_, String email_){
+        Transaction.getTransactions();
         // Parish pa = Parish.KingstonStAndrew;  // default parish
         Parish pa = Parish.findByName(parish_);
 
@@ -24,6 +27,14 @@ class Customer {
        Customer.customerid = clid;
         Customer.email = email_;
     }
+
+    public static void initialize(){
+		customers.add(new Customer("JBX09", "Bond, James", "Brigade Street", "St Mary", "1-876-987-5583","Bond.james@gmail"));
+		customers.add(new Customer("SHW34", "Holmes, Sherlock",  "Brigade St. Santa Cruz", "St. Elizabeth", "1-876-759-4441","shrapnull@optonline.net"));
+		customers.add(new Customer("THW03", "Hardy, Thomas", " ", "St Catherine",  "1-876-345-9703",""));
+		customers.add(new Customer("NDW58", "Drew, Nancy", "12 High St., Black River", "St. Elizabeth", "1-876-859-8089","ishoy@live.com"));
+		customers.add(new Customer("JJX12", "Jones, Jessica", "15 Old Hope Road ","Kingston",   "1-876-893-5197",""));
+	}
 
     public static void menu(){
             Scanner scan = new Scanner(System.in);
@@ -54,19 +65,25 @@ class Customer {
 	}
 
 	private static void createCustomer() {
+    	String clid = "none";
+    	String name_ = "none";
+    	String tel_ = "none";
+    	String address_ = "none";
+    	String parish_ = "none";
+    	String email_ = "none";
 		Scanner read = new Scanner(System.in);
 		System.out.println("Enter the model number of the product.");
-		String clid = read.nextLine() ;
+		 clid = read.nextLine() ;
 		System.out.println("Enter the name of the product.");
-		String name_ = read.nextLine() ;
+		 name_ = read.nextLine() ;
 		System.out.println("Enter the type of the product.");
-		String tel_ = read.nextLine() ;
+		 tel_ = read.nextLine() ;
 		System.out.println("Enter the description of the product.");
-		String address_ = read.nextLine() ;
+		 address_ = read.nextLine() ;
 		System.out.println("Enter the cost price of the product.");
-		String parish_ = read.nextLine() ;
+		 parish_ = read.nextLine() ;
 		System.out.println("Enter the selling price of the product.");
-		String email_ = read.nextLine() ;
+		 email_ = read.nextLine() ;
 
 
 		Customer e = new Customer( clid,  name_,  address_,  parish_,  tel_,  email_);
@@ -77,10 +94,12 @@ class Customer {
 	}
 
 	private static void viewCustomer() {
-    	for (Customer e : customers){
-			e.tring();
+    	String output = null;
+    	for (int i = 0; i<customers.size(); i++){
+				output= tring();
+				System.out.println(output);
 		}
-
+    	return;
 	}
 
 	private static void deleteCustomer() {
@@ -91,7 +110,7 @@ class Customer {
 		Scanner read = new Scanner(System.in);
 		String delete = read.nextLine();
 		for (Customer e : customers) {
-			//noinspection EqualsBetweenInconvertibleTypes,EqualsBetweenInconvertibleTypes,EqualsBetweenInconvertibleTypes,EqualsBetweenInconvertibleTypes
+			// noinspection EqualsBetweenInconvertibleTypes
 			if (e.equals(delete)) {
 				customers.remove(e);
 				System.out.println("Customer deleted.");
@@ -112,7 +131,7 @@ class Customer {
 		System.out.println("Enter the I.D. number of the customer you want to edit: ");
 		String model = scan.nextLine();
 		for (Customer a : customers) {
-			//noinspection EqualsBetweenInconvertibleTypes,EqualsBetweenInconvertibleTypes
+			// noinspection EqualsBetweenInconvertibleTypes
 			if (a.equals(model)) {
 				System.out.println(a);
 				System.out.println("Edit Options: ");
@@ -152,19 +171,19 @@ class Customer {
 		}
 	}
 
-	public static String getTelephone() {
+	private static String getTelephone() {
 		return telephone;
 	}
 
-	public static String getEmail() {
+	private static String getEmail() {
 		return email;
 	}
 
-	public static String getName() {
+	private static String getName() {
 		return name;
 	}
 
-	public static ArrayList<Address> getAddresses() {
+	private static ArrayList<Address> getAddresses() {
 		return addresses;
 	}
 
@@ -172,7 +191,7 @@ class Customer {
 		return customerid;
 	}
 
-	public static void setAddresses(ArrayList<Address> addresses) {
+	private static void setAddresses(ArrayList<Address> addresses) {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Do you really want to change the address (yes or no)?  ");
 		String choice = scan.nextLine();
@@ -196,7 +215,7 @@ class Customer {
 
 	}
 
-	public static void setEmail(String email) {
+	private static void setEmail(String email) {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Do you really want to change the email (yes or no)?  ");
 		String choice = scan.nextLine();
@@ -208,7 +227,7 @@ class Customer {
 		}
 	}
 
-	public static void setName(String name) {
+	private static void setName(String name) {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Do you really want to change the Customer name  (yes or no)?  ");
 		String choice = scan.nextLine();
@@ -220,7 +239,7 @@ class Customer {
 		}
 	}
 
-	public static void setTelephone(String telephone) {
+	private static void setTelephone(String telephone) {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Do you really want to change the telephone number (yes or no)?  ");
 		String choice = scan.nextLine();
@@ -249,7 +268,7 @@ class Customer {
 
 
 
-	public static String tring() {
+	private static String tring() {
         String f = "Client: %s (%s)\n  Tel: %s%s%s";
         StringBuilder aa;
         aa = new StringBuilder("\n  Address:");
@@ -265,22 +284,5 @@ class Customer {
         return String.format(f, name, customerid, telephone, aa.toString(),email, tt.toString());
     }
 
-    public Parish getPrimaryParish(){
-        Address p;
-        try{
-            p = addresses.get(0);
-        }
-        catch(Exception e){
-            p = null;
-        }
-        return Objects.requireNonNull(p).getParish();
-    }
 
-    private static ArrayList<Transaction> getTransactions() {
-        return transactions;
-    }
-
-    public String getCustomer() {
-        return toString();
-    }
 }
