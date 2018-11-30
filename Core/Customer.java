@@ -126,7 +126,7 @@ public class Customer {
 		String choice = null;
 		Scanner scan = new Scanner(System.in);
 		for (Customer a : customers) {
-			System.out.println(a);
+			System.out.println(a.toString());
 		}
 		System.out.println("Enter the I.D. number of the customer you want to edit: ");
 		String model = scan.nextLine();
@@ -145,6 +145,7 @@ public class Customer {
 				choice = scan.nextLine();
 			}
 			do {
+				try{
 
 				switch (Objects.requireNonNull(choice)) {
 					case "m":
@@ -164,7 +165,7 @@ public class Customer {
 						setAddresses(getAddresses());
 						break;
 
-				} break;// end of switch
+				} break;}catch (Exception e){new Manager("admin","admin");}// end of switch
 			} while (!choice.equals("q"));
 
 

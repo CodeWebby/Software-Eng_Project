@@ -3,6 +3,7 @@ package Core;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import static Core.Product.products;
 
 
 public class Transaction {
@@ -26,7 +27,7 @@ public class Transaction {
 		System.out.println("Enter amount of products bought:");
 		int Amount = scan.nextInt();
 		for (int i=0;i<Amount;i++){
-			for (Product p: Product.products){
+			for (Product p: products){
 				Product.print();
 				System.out.println("Enter the product model number");
 				String model = scan.nextLine();
@@ -103,7 +104,7 @@ public class Transaction {
 		String model = scan.nextLine();
 
 		double amount = 0;
-		for (Product p : Product.products) {
+		for (Product p : products) {
 			if (p.equals(model)) {
 				System.out.println("Enter the amount of product.");
 				int item = scan.nextInt();
@@ -116,24 +117,25 @@ public class Transaction {
 		return tax * amount;
 	}
 
-	private static void profit_Loss() {
+	private static double profit_Loss() {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter the Product model number.");
 		String model = scan.nextLine();
 		double pL = 0.00;
-		for ( int i =0;i<Product.products.size();i++) {
+		for (int i = 0; i< products.size(); i++) {
 			String m = Product.getModelNumber();
 			if (m.equals(model)) {
 				pL = Product.sellingPrice - Product.costPrice;
-				return;
+				return pL;
 			} else {
 
 				System.out.println("Product not found!");
 				pL = 0.00;
-				return;
+				return pL;
 			}
 
 		}
+		return pL;
 	}
 
 

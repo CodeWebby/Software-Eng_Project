@@ -142,7 +142,7 @@ public class Product {
 							a.setImageName(a.getImageName());
 							break;
 
-					} // end of switch
+					}break; // end of switch
 				} catch (Exception e) {
 					editProduct();
 				}

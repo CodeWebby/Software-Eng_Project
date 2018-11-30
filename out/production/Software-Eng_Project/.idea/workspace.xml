@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="00e374e4-fb1c-4746-bc7c-502b868ac41b" name="Default Changelist" comment="">
+    <list default="true" id="00e374e4-fb1c-4746-bc7c-502b868ac41b" name="Default Changelist" comment="version 1.2.2 of the cellwaveja system.&#10;                                                            changes made to the product class and transaction class.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CellwavejaMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/CellwavejaMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CellwavejaUI/AddnewTransactiontofile.java" beforeDir="false" afterPath="$PROJECT_DIR$/CellwavejaUI/AddnewTransactiontofile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CellwavejaUI/Addnewcustomertofile.java" beforeDir="false" afterPath="$PROJECT_DIR$/CellwavejaUI/Addnewcustomertofile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CellwavejaUI/CustomerInformationUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/CellwavejaUI/CustomerInformationUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CellwavejaUI/Functionsui.java" beforeDir="false" afterPath="$PROJECT_DIR$/CellwavejaUI/Functionsui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CellwavejaUI/InventoryUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/CellwavejaUI/InventoryUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CellwavejaUI/TransactionInformationUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/CellwavejaUI/TransactionInformationUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CellwavejaUI/addproductinformationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/CellwavejaUI/addproductinformationGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CellwavejaUI/startuservalidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/CellwavejaUI/startuservalidation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Manager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/SimpleData.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/SimpleData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Software-Eng_Project/Core/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Software-Eng_Project/Core/Product.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,10 +31,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Core/Product.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="42" column="73" selection-start-line="42" selection-start-column="73" selection-end-line="42" selection-end-column="73" />
+            <state relative-caret-position="116">
+              <caret line="77" column="8" lean-forward="true" selection-start-line="77" selection-start-column="8" selection-end-line="80" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#5201#5202#0" expanded="true" />
+                <element signature="e#5263#5264#0" expanded="true" />
+                <element signature="e#5321#5322#0" expanded="true" />
+                <element signature="e#5388#5389#0" expanded="true" />
+                <element signature="e#8885#8886#0" expanded="true" />
+                <element signature="e#8952#8953#0" expanded="true" />
+                <element signature="e#9020#9021#0" expanded="true" />
+                <element signature="e#9088#9089#0" expanded="true" />
+                <element signature="e#9046#9047#0" expanded="true" />
+                <element signature="e#9069#9070#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -37,19 +62,14 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Core/Customer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4692">
-              <caret line="288" selection-start-line="288" selection-end-line="288" />
+            <state relative-caret-position="-4">
+              <caret line="96" column="40" lean-forward="true" selection-start-line="96" selection-start-column="40" selection-end-line="96" selection-end-column="40" />
               <folding>
-                <element signature="e#5143#5144#0" expanded="true" />
-                <element signature="e#5166#5167#0" expanded="true" />
-                <element signature="e#5203#5204#0" expanded="true" />
-                <element signature="e#5222#5223#0" expanded="true" />
-                <element signature="e#5258#5259#0" expanded="true" />
-                <element signature="e#5276#5277#0" expanded="true" />
-                <element signature="e#5329#5330#0" expanded="true" />
-                <element signature="e#5352#5353#0" expanded="true" />
-                <element signature="e#5394#5395#0" expanded="true" />
-                <element signature="e#5418#5419#0" expanded="true" />
+                <element signature="e#5231#5232#0" expanded="true" />
+                <element signature="e#5287#5288#0" expanded="true" />
+                <element signature="e#5341#5342#0" expanded="true" />
+                <element signature="e#5417#5418#0" expanded="true" />
+                <element signature="e#5483#5484#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -58,32 +78,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CellwavejaMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Core/Manager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="72" column="50" selection-start-line="72" selection-start-column="50" selection-end-line="72" selection-end-column="50" />
+            <state relative-caret-position="252">
+              <caret line="39" column="51" lean-forward="true" selection-start-line="39" selection-start-column="51" selection-end-line="39" selection-end-column="51" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Core/Manager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="123">
+              <caret line="106" column="16" selection-start-line="106" selection-start-column="16" selection-end-line="106" selection-end-column="16" />
+              <folding>
+                <element signature="e#3316#3317#0" expanded="true" />
+                <element signature="e#3411#3412#0" expanded="true" />
+                <element signature="e#3466#3467#0" expanded="true" />
+                <element signature="e#3521#3522#0" expanded="true" />
+                <element signature="e#3570#3571#0" expanded="true" />
+                <element signature="e#3627#3628#0" expanded="true" />
+                <element signature="e#3674#3675#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Core/Transaction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="53" selection-start-line="53" selection-end-line="53" />
+            <state relative-caret-position="221">
+              <caret line="163" column="19" selection-start-line="163" selection-start-column="19" selection-end-line="163" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3237#3238#0" expanded="true" />
-                <element signature="e#3255#3256#0" expanded="true" />
-                <element signature="e#3287#3288#0" expanded="true" />
-                <element signature="e#3308#3309#0" expanded="true" />
+                <element signature="e#3425#3426#0" expanded="true" />
+                <element signature="e#3478#3479#0" expanded="true" />
+                <element signature="e#3386#3387#0" expanded="true" />
+                <element signature="e#3405#3406#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -110,8 +142,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CellwavejaUI/startuservalidation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="72" column="48" selection-start-line="72" selection-start-column="48" selection-end-line="72" selection-end-column="48" />
+            <state relative-caret-position="884">
+              <caret line="69" selection-start-line="69" selection-end-line="69" />
               <folding>
                 <element signature="e#2172#2173#0" expanded="true" />
               </folding>
@@ -133,12 +165,12 @@
         <option value="$PROJECT_DIR$/Core/Address.java" />
         <option value="$PROJECT_DIR$/CellwavejaUI/startuservalidation.java" />
         <option value="$PROJECT_DIR$/Core/DateUtil.java" />
+        <option value="$PROJECT_DIR$/Core/SimpleData.java" />
+        <option value="$PROJECT_DIR$/Core/Manager.java" />
+        <option value="$PROJECT_DIR$/CellwavejaMain.java" />
         <option value="$PROJECT_DIR$/Core/Product.java" />
         <option value="$PROJECT_DIR$/Core/Customer.java" />
         <option value="$PROJECT_DIR$/Core/Transaction.java" />
-        <option value="$PROJECT_DIR$/CellwavejaMain.java" />
-        <option value="$PROJECT_DIR$/Core/SimpleData.java" />
-        <option value="$PROJECT_DIR$/Core/Manager.java" />
       </list>
     </option>
   </component>
@@ -174,7 +206,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543518366018" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543590987157" />
     <property name="last_opened_file_path" value="$USER_HOME$/Documents/Comp 1161/Lab06b" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
@@ -279,14 +311,21 @@
       <option name="project" value="LOCAL" />
       <updated>1543525593885</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="version 1.2.1 of the cellwaveja system.&#10;                                                            changes made to the product class and transaction class.">
+      <created>1543528662483</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1543528662483</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24962178" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.24962178" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -301,7 +340,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="7" sideWeight="0.49924356" visible="true" weight="0.29742765" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49924356" weight="0.29742765" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5015129" side_tool="true" weight="0.32636657" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32636657" />
@@ -325,7 +364,7 @@
       <window_info id="Learn" order="6" />
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.329582" />
       <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49848714" visible="true" weight="0.32636657" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39929327" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -335,7 +374,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5015129" side_tool="true" weight="0.32636657" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32636657" />
-      <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.32685512" />
+      <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.32636657" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -358,7 +397,9 @@
     <MESSAGE value="version 1.1.9 of the cellwaveja system.&#10;  changes made to the product class and transaction class." />
     <MESSAGE value="version 1.1.10 of the cellwaveja system.&#10;  changes made to the product class and transaction class." />
     <MESSAGE value="version 1.1.11 of the cellwaveja system.&#10;                                                            changes made to the product class and transaction class." />
-    <option name="LAST_COMMIT_MESSAGE" value="version 1.1.11 of the cellwaveja system.&#10;                                                            changes made to the product class and transaction class." />
+    <MESSAGE value="version 1.2.1 of the cellwaveja system.&#10;                                                            changes made to the product class and transaction class." />
+    <MESSAGE value="version 1.2.2 of the cellwaveja system.&#10;                                                            changes made to the product class and transaction class." />
+    <option name="LAST_COMMIT_MESSAGE" value="version 1.2.2 of the cellwaveja system.&#10;                                                            changes made to the product class and transaction class." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Software-Eng_Project.iml">
@@ -381,46 +422,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/InventoryUI.java" />
-    <entry file="file://$PROJECT_DIR$/Core/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="42" column="73" selection-start-line="42" selection-start-column="73" selection-end-line="42" selection-end-column="73" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/jdk/internal/math/FloatingDecimal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1309">
           <caret line="109" column="52" selection-start-line="109" selection-start-column="52" selection-end-line="109" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Core/Customer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4692">
-          <caret line="288" selection-start-line="288" selection-end-line="288" />
-          <folding>
-            <element signature="e#5143#5144#0" expanded="true" />
-            <element signature="e#5166#5167#0" expanded="true" />
-            <element signature="e#5203#5204#0" expanded="true" />
-            <element signature="e#5222#5223#0" expanded="true" />
-            <element signature="e#5258#5259#0" expanded="true" />
-            <element signature="e#5276#5277#0" expanded="true" />
-            <element signature="e#5329#5330#0" expanded="true" />
-            <element signature="e#5352#5353#0" expanded="true" />
-            <element signature="e#5394#5395#0" expanded="true" />
-            <element signature="e#5418#5419#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CellwavejaMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -433,24 +438,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CellwavejaUI/startuservalidation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="72" column="48" selection-start-line="72" selection-start-column="48" selection-end-line="72" selection-end-column="48" />
+        <state relative-caret-position="884">
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
           <folding>
             <element signature="e#2172#2173#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Core/Transaction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3237#3238#0" expanded="true" />
-            <element signature="e#3255#3256#0" expanded="true" />
-            <element signature="e#3287#3288#0" expanded="true" />
-            <element signature="e#3308#3309#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -462,10 +453,77 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CellwavejaMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="39" column="51" lean-forward="true" selection-start-line="39" selection-start-column="51" selection-end-line="39" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Core/Manager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="72" column="50" selection-start-line="72" selection-start-column="50" selection-end-line="72" selection-end-column="50" />
+        <state relative-caret-position="123">
+          <caret line="106" column="16" selection-start-line="106" selection-start-column="16" selection-end-line="106" selection-end-column="16" />
+          <folding>
+            <element signature="e#3316#3317#0" expanded="true" />
+            <element signature="e#3411#3412#0" expanded="true" />
+            <element signature="e#3466#3467#0" expanded="true" />
+            <element signature="e#3521#3522#0" expanded="true" />
+            <element signature="e#3570#3571#0" expanded="true" />
+            <element signature="e#3627#3628#0" expanded="true" />
+            <element signature="e#3674#3675#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/Customer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4">
+          <caret line="96" column="40" lean-forward="true" selection-start-line="96" selection-start-column="40" selection-end-line="96" selection-end-column="40" />
+          <folding>
+            <element signature="e#5231#5232#0" expanded="true" />
+            <element signature="e#5287#5288#0" expanded="true" />
+            <element signature="e#5341#5342#0" expanded="true" />
+            <element signature="e#5417#5418#0" expanded="true" />
+            <element signature="e#5483#5484#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="77" column="8" lean-forward="true" selection-start-line="77" selection-start-column="8" selection-end-line="80" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5201#5202#0" expanded="true" />
+            <element signature="e#5263#5264#0" expanded="true" />
+            <element signature="e#5321#5322#0" expanded="true" />
+            <element signature="e#5388#5389#0" expanded="true" />
+            <element signature="e#8885#8886#0" expanded="true" />
+            <element signature="e#8952#8953#0" expanded="true" />
+            <element signature="e#9020#9021#0" expanded="true" />
+            <element signature="e#9088#9089#0" expanded="true" />
+            <element signature="e#9046#9047#0" expanded="true" />
+            <element signature="e#9069#9070#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/Transaction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="163" column="19" selection-start-line="163" selection-start-column="19" selection-end-line="163" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3425#3426#0" expanded="true" />
+            <element signature="e#3478#3479#0" expanded="true" />
+            <element signature="e#3386#3387#0" expanded="true" />
+            <element signature="e#3405#3406#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
